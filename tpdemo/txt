@@ -1,0 +1,29 @@
+https://www.jetbrains.com/phpstorm/download/other.html
+https://www.jetbrains.com/idea/download/other.html
+
+
+# laravel
+https://getcomposer.org/Composer-Setup.exe
+composer global require "laravel/installer"
+composer global update
+composer install
+
+# yii2
+# https://www.yiichina.com/tutorial/324
+https://github.com/yiisoft/yii2-app-advanced
+
+ php -r "readfile('https://getcomposer.org/installer');" | php
+
+ php composer.phar
+
+ composer global require "fxp/composer-asset-plugin:~1.3"
+  composer global require "fxp/composer-asset-plugin:~1.0.0"
+ php composer.phar global require "fxp/composer-asset-plugin:~1.3"
+ php composer.phar global require "fxp/composer-asset-plugin:1.0.0"
+ https://packagist.org/?query=fxp%2Fcomposer-asset-plugin
+ https://packagist.org/packages/fxp/composer-asset-plugin
+composer-asset-plugin 对应 php 版本
+https://getcomposer.org/
+  Package fxp/composer-asset-plugin at version 1.0.0 has a PHP requirement in
+  compatible with your PHP version, PHP extensions and Composer version
+
