@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.user.front.mapper.AddressMapper">
+    <resultMap id="addressResultMap" type="com.shop.user.dto.AddressDto">
+        <result property="addrId" column="addr_id" javaType="long"></result>
+        <result property="userid" column="userid" javaType="java.lang.Long"></result>
+        <result property="consignee" column="consignee" javaType="java.lang.String"></result>
+        <result property="regionId" column="region_id" javaType="java.lang.String"></result>
+        <result property="regionName" column="region_name" javaType="java.lang.String"></result>
+        <result property="address" column="address" javaType="java.lang.String"></result>
+        <result property="zipcode" column="zipcode" javaType="java.lang.String"></result>
+        <result property="phoneTel" column="phone_tel" javaType="java.lang.String"></result>
+        <result property="phoneMob" column="phone_mob" javaType="java.lang.String"></result>
+        <result property="defaddr" column="defaddr" javaType="java.lang.Boolean"></result>
+        <result property="timestamp" column="timestamp" javaType="java.lang.Long"></result>
+    </resultMap>
+
+
+    <insert id="add" parameterType="com.shop.user.dto.AddressDto" >
+        insert into
+        <include refid="user"/>
+        <trim suffixOverrides=",">
+        (
+           <if test="addrId!=null">
+               addr_id,
+           </if>
+           <if test="userid!=null">
+               userid,
+           </if>
+           <if test="consignee!=null and consignee!=''">
+               consignee,
+           </if>
+           <if test="regionId!=null and regionId!=''">
+               region_id,
+           </if>
+           <if test="regionName!=null and regionName!=''">
+               region_name,
+           </if>
+           <if test="address!=null and address!=''">
+               address,
+           </if>
+           <if test="zipcode!=null and zipcode!=''">
+               zipcode,
+           </if>
+           <if test="phoneTel!=null and phoneTel!=''">
+               phone_tel,
+           </if>
+           <if test="phoneMob!=null and phoneMob!=''">
+               phone_mob,
+           </if>
+            defaddr,timestamp
+        </trim>
+        )
+        values
+        (
+        <trim suffixOverrides=",">
+           <if test="addrId!=null">
+               #{addrId},
+           </if>
+           <if test="userid!=null">
+               #{userid},
+           </if>
+           <if test="consignee!=null and consignee!=''">
+               #{consignee},
+           </if>
+           <if test="regionId!=null and regionId!=''">
+               #{regionId},
+           </if>
+           <if test="regionName!=null and regionName!=''">
+               #{regionName},
+           </if>
+           <if test="address!=null and address!=''">
+               #{address},
+           </if>
+           <if test="zipcode!=null and zipcode!=''">
+               #{zipcode},
+           </if>
+           <if test="phoneTel!=null and phoneTel!=''">
+               #{phoneTel},
+           </if>
+           <if test="phoneMob!=null and phoneMob!=''">
+               #{phoneMob},
+           </if>
+            #{defaddr},0
+        </trim>
+        )
+        </insert>
+
+    <update id="modify" parameterType="com.shop.user.dto.AddressDto" >
+        update
+        <include refid="user"/> set
+        <trim prefix="set" suffixOverrides=",">
+            <if test="addrId!=0">
+               addr_id=#{addrId},
+            </if>
+            <if test="userid!=null">
+               userid=#{userid},
+            </if>
+            <if test="consignee!=null and consignee!=''">
+               consignee=#{consignee},
+            </if>
+            <if test="regionId!=null and regionId!=''">
+               region_id=#{regionId},
+            </if>
+            <if test="regionName!=null and regionName!=''">
+               region_name=#{regionName},
+            </if>
+            <if test="address!=null and address!=''">
+               address=#{address},
+            </if>
+            <if test="zipcode!=null and zipcode!=''">
+               zipcode=#{zipcode},
+            </if>
+            <if test="phoneTel!=null and phoneTel!=''">
+               phone_tel=#{phoneTel},
+            </if>
+            <if test="phoneMob!=null and phoneMob!=''">
+               phone_mob=#{phoneMob},
+            </if>
+            defaddr=#{defaddr}
+        </trim>
+    </update>
+
+   <!-- <sql id="user">
+        <if test="userTyp==0">
+            t_buyer_address
+        </if>
+        <if test="userType==1">
+            t_seller_address
+        </if>
+        <if test="userType==2">
+            t_agent_address
+        </if>
+        <if test="userType==3">
+            t_manufacturer_address
+        </if>
+        <if test="userTyp=e=4">
+            t_platform_address
+        </if>
+    </sql>-->
+
+    <sql id="user">
+        <if test="userType=='buyer'">
+            t_buyer_address
+        </if>
+        <if test="userType=='seller'">
+            t_seller_address
+        </if>
+        <if test="userType=='agent'">
+            t_agent_address
+        </if>
+        <if test="userType=='manufacturer'">
+            t_manufacturer_address
+        </if>
+        <if test="userType=='platform'">
+            t_platform_address
+        </if>
+    </sql>
+
+    <sql id="whereIf">
+        <where>
+            <trim prefixOverrides="or">
+            <if test="addrId!=null">
+                or  addr_id=#{addrId}
+            </if>
+            <if test="userid!=null">
+                or  userid=#{userid}
+            </if>
+            <if test="consignee!=null and consignee!=''">
+                or  consignee=#{consignee}
+            </if>
+            <if test="regionId!=null and regionId!=''">
+                or  region_id=#{regionId}
+            </if>
+            <if test="regionName!=null and regionName!=''">
+                or  region_name=#{regionName}
+            </if>
+            <if test="address!=null and address!=''">
+                or  address=#{address}
+            </if>
+            <if test="zipcode!=null and zipcode!=''">
+                or  zipcode=#{zipcode}
+            </if>
+            <if test="phoneTel!=null and phoneTel!=''">
+                or  phone_tel=#{phoneTel}
+            </if>
+            <if test="phoneMob!=null and phoneMob!=''">
+                or  phone_mob=#{phoneMob}
+            </if>
+            <if test="defaddr">
+                or    defaddr=#{defaddr}
+            </if>
+            </trim>
+        </where>
+    </sql>
+
+    <select id="select" parameterType="com.shop.user.dto.AddressDto" resultMap="addressResultMap">
+        select
+        <if test="!enablePage ">
+            * from
+            <include refid="user"/>
+            <include refid="whereIf"/>  order by addr_id
+        </if>
+
+        <if test="enablePage and sqlType=='oracle'">
+            * from
+            (select t1.*  from (select * from <include
+                refid="user"/>
+            <include refid="whereIf"/>  order by addr_id) t1 where rownum &lt;= (#{page}+1)*#{size}
+            )  where rownum &gt;= (#{page}-1)*#{size}
+        </if>
+
+        <if test="sqlType!='oracle' and and sqlType!='sql'">
+            * from
+            <include refid="user"/>
+            <include refid="whereIf"/>
+            order by addr_id
+        </if>
+
+
+        <if test="enablePage and sqlType=='sql'">
+            t1.* from (select *,row_number() over by(order by addr_id as rowid)
+            <include refid="user"/>
+            <include refid="whereIf"/> where rowid between
+            <if test="page==1">
+            1
+            </if>
+            <if test="page>1">
+                (#{page}-1)*#{size}
+            </if>
+            and (#{page}+1)*#{size} ) t1
+        </if>
+
+
+
+        <if test="sqlType=='postgre'">
+            limit (#{page}-1)*#{size} offset #{size}
+        </if>
+        <if test="enablePage and  sqlType!='sql' or  sqlType!='oracle' or sqlType!='postgre'">
+            limit (#{page}-1)*#{size},#{size}
+        </if>
+    </select>
+
+    <select id="count" parameterType="com.shop.user.dto.AddressDto" resultType="java.lang.Long">
+        select count(*) from
+        <include refid="user"/>
+        <include refid="whereIf"/>
+    </select>
+
+    <delete id="delete"  parameterType="com.shop.user.dto.DeleteDto">
+        delete from
+        <include refid="user"/>
+         where userid=#{userId} and
+        <if test="id>0">
+            and
+            addr_id =#{id};
+        </if>
+        <if test="ids!=null">
+            and  addr_id in
+            <foreach collection="ids" item="item" separator="," open="(" close=")">
+                #{item}
+            </foreach>
+        </if>
+
+    </delete>
+
+    <update id="setDefaultAddr"  parameterType="com.shop.user.front.dto.UpdateDefaultAddressDto" >
+        update
+        <include refid="user"/>
+        set defaddr=1 where userid=#{userId}
+        <if test="addressId==0">
+         and
+        addr_id =#{addressId};
+        </if>
+        <if test="addressId!=0">
+            and
+            addr_id =(select
+            <if test="sqlType=='sql'">
+                top 1
+            </if>
+            addr_id from  <include refid="user"/> where userid=#{userid}
+            order by addr_id
+            <if test="sqlType=='oracle'">
+                where rownum=1
+            </if>
+            <if test="sqlType=='postgre'">
+                limit 1 offset 1
+            </if>
+            <if test="sqlType!='sql' or  sqlType!='oracle' or sqlType!='postgre'">
+                   limit 1,1
+            </if>
+
+            ) ;
+        </if>
+    </update>
+
+    <update id="setNotDefaultAddr" parameterType="com.shop.user.front.dto.UpdateDefaultAddressDto" >
+            update
+        <include refid="user"/> set
+             defaddr=0 where userid=#{userId}
+        <if test="addressId>0">
+             and
+            addr_id !=#{addressId};
+        </if>
+    </update>
+
+    <select id="exists"   parameterType="com.shop.user.front.dto.ExistsDefaultAddressDto" resultType="java.lang.Integer">
+        select count(*)  from
+        <include refid="user"/>
+        where userid=#{userId}
+        <if test="addressId!=0">
+            and  addr_id=#{addressId}
+        </if>
+        <if test="isDefault">
+            and  defaddr=1
+        </if>
+    </select>
+
+    <select id="timestamp"   parameterType="java.lang.Long" resultType="java.lang.Integer">
+        select count(*)  from  <include refid="user"/> addr_id=#{id} and timestamp =#{timestamp}
+    </select>
+</mapper>

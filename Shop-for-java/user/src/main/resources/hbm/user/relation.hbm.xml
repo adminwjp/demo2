@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.shop.user.entity">
+    <class name="com.shop.user.entity.Relation" table="t_relation" >
+        <id name="id" column="id" unsaved-value="0">
+            <generator class="identity" />
+        </id>
+        <property name="value1" column="value1" type="java.lang.Long" ></property>
+        <property name="value2" column="value2" type="java.lang.Long" ></property>
+        <property name="value3" column="value3" type="java.lang.Long" ></property>
+
+
+        <property name="strValue1" column="str_value1" type="java.lang.String" ></property>
+        <property name="strValue2" column="str_value2" type="java.lang.String" ></property>
+        <property name="strValue3" column="str_value3" type="java.lang.String" ></property>
+
+        <property name="description" column="description" type="java.lang.String" ></property>
+
+        <property name="relationType" column="relation_type" type="com.shop.RelationType" ></property>
+
+    </class>
+</hibernate-mapping>

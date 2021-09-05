@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-lazy="false">
+  <class name="Template.Api.Models.DatabaseModel,Template.Api" table="t_database" discriminator-value="0">
+    <id name="Id" column="id" unsaved-value="0">
+      <generator class="increment" />
+      <!-- unsaved-value used to be null and generator was increment in h2.0.3 -->
+    </id>
+    <property column="name" name="Name" type="System.String"  length="50"/>
+    <property column="program_name" name="ProgramName" type="System.String"  length="50"/>
+    <property column="remark" name="Remark" type="System.String"  length="50"/>
+     <set name="TableModels"   inverse="true" lazy="false" cascade="all">
+      <key column="database_id" foreign-key="fk_database_id" />
+      <one-to-many class="Template.Api.Models.TableModel,Template.Api"/>
+    </set>
+  </class>
+  
+  <class name="Template.Api.Models.TableModel,Template.Api" table="t_table" discriminator-value="0">
+    <id name="Id" column="id" unsaved-value="0">
+      <generator class="increment" />
+      <!-- unsaved-value used to be null and generator was increment in h2.0.3 -->
+    </id>
+    <property column="class_name" name="ClassName" type="System.String"  length="50"/>
+    <property column="table_name" name="TablemName" type="System.String"  length="50"/>
+    <property column="remark" name="Remark" type="System.String"  length="50"/>
+    <property column="title" name="Title" type="System.String"  length="50"/>
+    <many-to-one name="Database"  column="database_id" foreign-key="fk_database_id" class="Template.Api.Models.DatabaseModel,Template.Api"/>
+    <set name="ColumnModels"   inverse="true" lazy="false" cascade="all">
+      <key column="table_id" foreign-key="fk_table_id" />
+      <one-to-many class="Template.Api.Models.ColumnModel,Template.Api"/>
+    </set>
+  </class>
+  
+   <class name="Template.Api.Models.ColumnModel,Template.Api" table="t_column" discriminator-value="0">
+    <id name="Id" column="id" unsaved-value="0">
+      <generator class="increment" />
+      <!-- unsaved-value used to be null and generator was increment in h2.0.3 -->
+    </id>
+    <property column="cloum_name" name="CloumName" type="System.String"  length="50"/>
+    <property column="property_name" name="PropertyName" type="System.String"  length="50"/>
+    <property column="remark" name="Remark" type="System.String"  length="50"/>
+    <property column="csharep_property_type" name="CsharepPropertyType" type="System.String"  length="50"/>
+    <property column="title" name="Title" type="System.String"  length="50"/>
+    <many-to-one name="Table"  column="table_id" foreign-key="fk_table_id" class="Template.Api.Models.TableModel,Template.Api"/>
+  </class>
+  
+
+  
+
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.shop.user.entity">
+    <class name="com.shop.user.entity.TeambuyLog" table="t_teambuy_log" >
+        <id name="logid" column="logid" unsaved-value="0" ><generator class="identity" /></id>
+        <property name="tbid" column="tbid" type="java.lang.Long" > </property>
+        <property name="userid" column="userid" type="java.lang.Long" ></property>
+        <property name="orderId" column="order_id" type="java.lang.Long" ></property>
+        <property name="goodsId" column="goods_id" type="java.lang.Long" ></property>
+        <property name="teamid" column="teamid" type="java.lang.Long" ></property>
+        <property name="leader" column="leader" type="java.lang.String" ></property>
+        <property name="people" column="people" type="java.lang.String" ></property>
+        <property name="status" column="status" type="int" ></property>
+        <property name="created" column="created" type="long" ></property>
+        <property name="expired" column="expired" type="long" ></property>
+        <property name="payTime" column="pay_time" type="long" ></property>
+    </class>
+</hibernate-mapping>

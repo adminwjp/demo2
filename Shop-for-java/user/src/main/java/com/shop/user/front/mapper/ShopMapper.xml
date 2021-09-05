@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.user.front.mapper.ShopMapper">
+    <resultMap id="shopResultMap" type="com.shop.user.dto.ShopDto">
+        <result property="shopId" column="shop_id" javaType="java.lang.Long"></result>
+        <result property="shopName" column="shop_name" javaType="java.lang.String"></result>
+        <result property="ownerName" column="owner_name" javaType="java.lang.String"></result>
+        <result property="identityCard" column="identity_card" javaType="java.lang.Long"></result>
+        <result property="regionId" column="region_id" javaType="java.lang.Long"></result>
+        <result property="regionName" column="region_name" javaType="java.lang.String"></result>
+        <result property="address" column="address" javaType="java.lang.String"></result>
+        <result property="zipcode" column="zipcode" javaType="java.lang.String"></result>
+        <result property="tel" column="tel" javaType="java.lang.String"></result>
+        <result property="sgrade" column="sgrade" javaType="java.lang.String"></result>
+        <result property="applyRemark" column="apply_remark" javaType="java.lang.String"></result>
+        <result property="creditValue" column="credit_value" javaType="java.lang.String"></result>
+        <result property="domain" column="domain" javaType="java.lang.String"></result>
+        <result property="state" column="state" javaType="java.lang.Integer"></result>
+        <result property="closeReason" column="close_reason" javaType="java.lang.String"></result>
+        <result property="addTime" column="add_time" javaType="java.lang.Long"></result>
+        <result property="endTime" column="end_time" javaType="java.lang.Long"></result>
+        <result property="certification" column="certification" javaType="java.lang.String"></result>
+        <result property="sortOrder" column="sort_order" javaType="java.lang.Integer"></result>
+        <result property="recommended" column="recommended" javaType="java.lang.String"></result>
+        <result property="theme" column="theme" javaType="java.lang.String"></result>
+        <result property="wapTheme" column="wap_theme" javaType="java.lang.String"></result>
+        <result property="storeBanner" column="store_banner" javaType="java.lang.String"></result>
+        <result property="wapStoreBanner" column="wap_store_banner" javaType="java.lang.String"></result>
+        <result property="storeLogo" column="store_logo" javaType="java.lang.String"></result>
+        <result property="description" column="description" javaType="java.lang.String"></result>
+        <result property="identityFront" column="identity_front" javaType="java.lang.String"></result>
+        <result property="identityBack" column="identity_back" javaType="java.lang.String"></result>
+        <result property="businessLicense" column="business_license" javaType="java.lang.String"></result>
+        <result property="imQq" column="im_qq" javaType="java.lang.String"></result>
+        <result property="imWw" column="im_ww" javaType="java.lang.String"></result>
+        <result property="navColor" column="nav_color" javaType="java.lang.String"></result>
+        <result property="navShowStyle" column="nav_show_style" javaType="java.lang.String"></result>
+        <result property="hotSearch" column="hot_search" javaType="java.lang.String"></result>
+        <result property="businessScope" column="business_scope" javaType="java.lang.String"></result>
+        <result property="onlineService" column="online_service" javaType="java.lang.String"></result>
+        <result property="hotline" column="hotline" javaType="java.lang.String"></result>
+        <result property="storeSlides" column="store_slides" javaType="java.lang.String"></result>
+        <result property="wapStoreSlides" column="wap_store_slides" javaType="java.lang.String"></result>
+        <result property="longitude" column="longitude" javaType="java.lang.String"></result>
+        <result property="latitude" column="latitude" javaType="java.lang.String"></result>
+        <result property="zoom" column="zoom" javaType="java.lang.String"></result>
+    </resultMap>
+
+
+    <insert id="add" parameterType="com.shop.user.dto.ShopDto" >
+        insert into t_shop
+        <trim suffixOverrides=",">
+        (
+           <if test="shopId!=null">
+               shop_id,
+           </if>
+           <if test="shopName!=null and shopName!=''">
+               shop_name,
+           </if>
+           <if test="ownerName!=null and ownerName!=''">
+               owner_name,
+           </if>
+           <if test="identityCard!=null">
+               identity_card,
+           </if>
+           <if test="regionId!=null">
+               region_id,
+           </if>
+           <if test="regionName!=null and regionName!=''">
+               region_name,
+           </if>
+           <if test="address!=null and address!=''">
+               address,
+           </if>
+           <if test="zipcode!=null and zipcode!=''">
+               zipcode,
+           </if>
+           <if test="tel!=null and tel!=''">
+               tel,
+           </if>
+           <if test="sgrade!=null and sgrade!=''">
+               sgrade,
+           </if>
+           <if test="applyRemark!=null and applyRemark!=''">
+               apply_remark,
+           </if>
+           <if test="creditValue!=null and creditValue!=''">
+               credit_value,
+           </if>
+           <if test="domain!=null and domain!=''">
+               domain,
+           </if>
+           <if test="state!=null">
+               state,
+           </if>
+           <if test="closeReason!=null and closeReason!=''">
+               close_reason,
+           </if>
+           <if test="addTime!=null ">
+               add_time,
+           </if>
+           <if test="endTime!=null ">
+               end_time,
+           </if>
+           <if test="certification!=null and certification!=''">
+               certification,
+           </if>
+           <if test="sortOrder!=null">
+               sort_order,
+           </if>
+           <if test="recommended!=null and recommended!=''">
+               recommended,
+           </if>
+           <if test="theme!=null and theme!=''">
+               theme,
+           </if>
+           <if test="wapTheme!=null and wapTheme!=''">
+               wap_theme,
+           </if>
+           <if test="storeBanner!=null and storeBanner!=''">
+               store_banner,
+           </if>
+           <if test="wapStoreBanner!=null and wapStoreBanner!=''">
+               wap_store_banner,
+           </if>
+           <if test="storeLogo!=null and storeLogo!=''">
+               store_logo,
+           </if>
+           <if test="description!=null and description!=''">
+               description,
+           </if>
+           <if test="identityFront!=null and identityFront!=''">
+               identity_front,
+           </if>
+           <if test="identityBack!=null and identityBack!=''">
+               identity_back,
+           </if>
+           <if test="businessLicense!=null and businessLicense!=''">
+               business_license,
+           </if>
+           <if test="imQq!=null and imQq!=''">
+               im_qq,
+           </if>
+           <if test="imWw!=null and imWw!=''">
+               im_ww,
+           </if>
+           <if test="navColor!=null and navColor!=''">
+               nav_color,
+           </if>
+           <if test="navShowStyle!=null and navShowStyle!=''">
+               nav_show_style,
+           </if>
+           <if test="hotSearch!=null and hotSearch!=''">
+               hot_search,
+           </if>
+           <if test="businessScope!=null and businessScope!=''">
+               business_scope,
+           </if>
+           <if test="onlineService!=null and onlineService!=''">
+               online_service,
+           </if>
+           <if test="hotline!=null and hotline!=''">
+               hotline,
+           </if>
+           <if test="storeSlides!=null and storeSlides!=''">
+               store_slides,
+           </if>
+           <if test="wapStoreSlides!=null and wapStoreSlides!=''">
+               wap_store_slides,
+           </if>
+           <if test="longitude!=null and longitude!=''">
+               longitude,
+           </if>
+           <if test="latitude!=null and latitude!=''">
+               latitude,
+           </if>
+           <if test="zoom!=null and zoom!=''">
+               zoom,
+           </if>
+        </trim>
+        )
+        values
+        (
+        <trim suffixOverrides=",">
+           <if test="shopId!=null">
+               #{shopId},
+           </if>
+           <if test="shopName!=null and shopName!=''">
+               #{shopName},
+           </if>
+           <if test="ownerName!=null and ownerName!=''">
+               #{ownerName},
+           </if>
+           <if test="identityCard!=null">
+               #{identityCard},
+           </if>
+           <if test="regionId!=null">
+               #{regionId},
+           </if>
+           <if test="regionName!=null and regionName!=''">
+               #{regionName},
+           </if>
+           <if test="address!=null and address!=''">
+               #{address},
+           </if>
+           <if test="zipcode!=null and zipcode!=''">
+               #{zipcode},
+           </if>
+           <if test="tel!=null and tel!=''">
+               #{tel},
+           </if>
+           <if test="sgrade!=null and sgrade!=''">
+               #{sgrade},
+           </if>
+           <if test="applyRemark!=null and applyRemark!=''">
+               #{applyRemark},
+           </if>
+           <if test="creditValue!=null and creditValue!=''">
+               #{creditValue},
+           </if>
+           <if test="domain!=null and domain!=''">
+               #{domain},
+           </if>
+           <if test="state!=null">
+               #{state},
+           </if>
+           <if test="closeReason!=null and closeReason!=''">
+               #{closeReason},
+           </if>
+           <if test="addTime!=null">
+               #{addTime},
+           </if>
+           <if test="endTime!=null ">
+               #{endTime},
+           </if>
+           <if test="certification!=null and certification!=''">
+               #{certification},
+           </if>
+           <if test="sortOrder!=null">
+               #{sortOrder},
+           </if>
+           <if test="recommended!=null and recommended!=''">
+               #{recommended},
+           </if>
+           <if test="theme!=null and theme!=''">
+               #{theme},
+           </if>
+           <if test="wapTheme!=null and wapTheme!=''">
+               #{wapTheme},
+           </if>
+           <if test="storeBanner!=null and storeBanner!=''">
+               #{storeBanner},
+           </if>
+           <if test="wapStoreBanner!=null and wapStoreBanner!=''">
+               #{wapStoreBanner},
+           </if>
+           <if test="storeLogo!=null and storeLogo!=''">
+               #{storeLogo},
+           </if>
+           <if test="description!=null and description!=''">
+               #{description},
+           </if>
+           <if test="identityFront!=null and identityFront!=''">
+               #{identityFront},
+           </if>
+           <if test="identityBack!=null and identityBack!=''">
+               #{identityBack},
+           </if>
+           <if test="businessLicense!=null and businessLicense!=''">
+               #{businessLicense},
+           </if>
+           <if test="imQq!=null and imQq!=''">
+               #{imQq},
+           </if>
+           <if test="imWw!=null and imWw!=''">
+               #{imWw},
+           </if>
+           <if test="navColor!=null and navColor!=''">
+               #{navColor},
+           </if>
+           <if test="navShowStyle!=null and navShowStyle!=''">
+               #{navShowStyle},
+           </if>
+           <if test="hotSearch!=null and hotSearch!=''">
+               #{hotSearch},
+           </if>
+           <if test="businessScope!=null and businessScope!=''">
+               #{businessScope},
+           </if>
+           <if test="onlineService!=null and onlineService!=''">
+               #{onlineService},
+           </if>
+           <if test="hotline!=null and hotline!=''">
+               #{hotline},
+           </if>
+           <if test="storeSlides!=null and storeSlides!=''">
+               #{storeSlides},
+           </if>
+           <if test="wapStoreSlides!=null and wapStoreSlides!=''">
+               #{wapStoreSlides},
+           </if>
+           <if test="longitude!=null and longitude!=''">
+               #{longitude},
+           </if>
+           <if test="latitude!=null and latitude!=''">
+               #{latitude},
+           </if>
+           <if test="zoom!=null and zoom!=''">
+               #{zoom},
+           </if>
+        </trim>
+        )
+        </insert>
+
+    <update id="modify" parameterType="com.shop.user.dto.ShopDto" >
+        update  t_shop
+        <trim prefix="set" suffixOverrides=",">
+            <if test="storeId!=null">
+               store_id=#{storeId},
+            </if>
+            <if test="storeName!=null and storeName!=''">
+               store_name=#{storeName},
+            </if>
+            <if test="ownerName!=null and ownerName!=''">
+               owner_name=#{ownerName},
+            </if>
+            <if test="identityCard!=null">
+               identity_card=#{identityCard},
+            </if>
+            <if test="regionId!=null">
+               region_id=#{regionId},
+            </if>
+            <if test="regionName!=null and regionName!=''">
+               region_name=#{regionName},
+            </if>
+            <if test="address!=null and address!=''">
+               address=#{address},
+            </if>
+            <if test="zipcode!=null and zipcode!=''">
+               zipcode=#{zipcode},
+            </if>
+            <if test="tel!=null and tel!=''">
+               tel=#{tel},
+            </if>
+            <if test="sgrade!=null and sgrade!=''">
+               sgrade=#{sgrade},
+            </if>
+            <if test="applyRemark!=null and applyRemark!=''">
+               apply_remark=#{applyRemark},
+            </if>
+            <if test="creditValue!=null and creditValue!=''">
+               credit_value=#{creditValue},
+            </if>
+            <if test="domain!=null and domain!=''">
+               domain=#{domain},
+            </if>
+            <if test="state!=null">
+               state=#{state},
+            </if>
+            <if test="closeReason!=null and closeReason!=''">
+               close_reason=#{closeReason},
+            </if>
+            <if test="addTime!=null ">
+               add_time=#{addTime},
+            </if>
+            <if test="endTime!=null ">
+               end_time=#{endTime},
+            </if>
+            <if test="certification!=null and certification!=''">
+               certification=#{certification},
+            </if>
+            <if test="sortOrder!=null">
+               sort_order=#{sortOrder},
+            </if>
+            <if test="recommended!=null and recommended!=''">
+               recommended=#{recommended},
+            </if>
+            <if test="theme!=null and theme!=''">
+               theme=#{theme},
+            </if>
+            <if test="wapTheme!=null and wapTheme!=''">
+               wap_theme=#{wapTheme},
+            </if>
+            <if test="storeBanner!=null and storeBanner!=''">
+               store_banner=#{storeBanner},
+            </if>
+            <if test="wapStoreBanner!=null and wapStoreBanner!=''">
+               wap_store_banner=#{wapStoreBanner},
+            </if>
+            <if test="storeLogo!=null and storeLogo!=''">
+               store_logo=#{storeLogo},
+            </if>
+            <if test="description!=null and description!=''">
+               description=#{description},
+            </if>
+            <if test="identityFront!=null and identityFront!=''">
+               identity_front=#{identityFront},
+            </if>
+            <if test="identityBack!=null and identityBack!=''">
+               identity_back=#{identityBack},
+            </if>
+            <if test="businessLicense!=null and businessLicense!=''">
+               business_license=#{businessLicense},
+            </if>
+            <if test="imQq!=null and imQq!=''">
+               im_qq=#{imQq},
+            </if>
+            <if test="imWw!=null and imWw!=''">
+               im_ww=#{imWw},
+            </if>
+            <if test="navColor!=null and navColor!=''">
+               nav_color=#{navColor},
+            </if>
+            <if test="navShowStyle!=null and navShowStyle!=''">
+               nav_show_style=#{navShowStyle},
+            </if>
+            <if test="hotSearch!=null and hotSearch!=''">
+               hot_search=#{hotSearch},
+            </if>
+            <if test="businessScope!=null and businessScope!=''">
+               business_scope=#{businessScope},
+            </if>
+            <if test="onlineService!=null and onlineService!=''">
+               online_service=#{onlineService},
+            </if>
+            <if test="hotline!=null and hotline!=''">
+               hotline=#{hotline},
+            </if>
+            <if test="storeSlides!=null and storeSlides!=''">
+               store_slides=#{storeSlides},
+            </if>
+            <if test="wapStoreSlides!=null and wapStoreSlides!=''">
+               wap_store_slides=#{wapStoreSlides},
+            </if>
+            <if test="longitude!=null and longitude!=''">
+               longitude=#{longitude},
+            </if>
+            <if test="latitude!=null and latitude!=''">
+               latitude=#{latitude},
+            </if>
+            <if test="zoom!=null and zoom!=''">
+               zoom=#{zoom},
+            </if>
+        </trim>
+    </update>
+
+    <sql id="whereIf">
+        <where>
+            <trim  prefixOverrides="or">
+            <if test="shopId!=null">
+                or  shop_id=#{shopId}
+            </if>
+            <if test="shopName!=null and shopName!=''">
+                or  shop_name=#{shopName}
+            </if>
+            <if test="ownerName!=null and ownerName!=''">
+                or  owner_name=#{ownerName}
+            </if>
+            <if test="identityCard!=null">
+                or  identity_card=#{identityCard}
+            </if>
+            <if test="regionId!=null">
+                or  region_id=#{regionId}
+            </if>
+            <if test="regionName!=null and regionName!=''">
+                or  region_name=#{regionName}
+            </if>
+            <if test="address!=null and address!=''">
+                or  address=#{address}
+            </if>
+            <if test="zipcode!=null and zipcode!=''">
+                or  zipcode=#{zipcode}
+            </if>
+            <if test="tel!=null and tel!=''">
+                or  tel=#{tel}
+            </if>
+            <if test="sgrade!=null and sgrade!=''">
+                or  sgrade=#{sgrade}
+            </if>
+            <if test="applyRemark!=null and applyRemark!=''">
+                or  apply_remark=#{applyRemark}
+            </if>
+            <if test="creditValue!=null and creditValue!=''">
+                or  credit_value=#{creditValue}
+            </if>
+            <if test="domain!=null and domain!=''">
+                or  domain=#{domain}
+            </if>
+            <if test="state!=null">
+                or  state=#{state}
+            </if>
+            <if test="closeReason!=null and closeReason!=''">
+                or  close_reason=#{closeReason}
+            </if>
+
+            <if test="certification!=null and certification!=''">
+                or  certification=#{certification}
+            </if>
+            <if test="sortOrder!=null">
+                or  sort_order=#{sortOrder}
+            </if>
+            <if test="recommended!=null and recommended!=''">
+                or  recommended=#{recommended}
+            </if>
+            <if test="theme!=null and theme!=''">
+                or  theme=#{theme}
+            </if>
+            <if test="wapTheme!=null and wapTheme!=''">
+                or  wap_theme=#{wapTheme}
+            </if>
+            <if test="storeBanner!=null and storeBanner!=''">
+                or  store_banner=#{storeBanner}
+            </if>
+            <if test="wapStoreBanner!=null and wapStoreBanner!=''">
+                or  wap_store_banner=#{wapStoreBanner}
+            </if>
+            <if test="storeLogo!=null and storeLogo!=''">
+                or  store_logo=#{storeLogo}
+            </if>
+            <if test="description!=null and description!=''">
+                or  description=#{description}
+            </if>
+            <if test="identityFront!=null and identityFront!=''">
+                or  identity_front=#{identityFront}
+            </if>
+            <if test="identityBack!=null and identityBack!=''">
+                or  identity_back=#{identityBack}
+            </if>
+            <if test="businessLicense!=null and businessLicense!=''">
+                or  business_license=#{businessLicense}
+            </if>
+            <if test="imQq!=null and imQq!=''">
+                or  im_qq=#{imQq}
+            </if>
+            <if test="imWw!=null and imWw!=''">
+                or  im_ww=#{imWw}
+            </if>
+            <if test="navColor!=null and navColor!=''">
+                or  nav_color=#{navColor}
+            </if>
+            <if test="navShowStyle!=null and navShowStyle!=''">
+                or  nav_show_style=#{navShowStyle}
+            </if>
+            <if test="hotSearch!=null and hotSearch!=''">
+                or  hot_search=#{hotSearch}
+            </if>
+            <if test="businessScope!=null and businessScope!=''">
+                or  business_scope=#{businessScope}
+            </if>
+            <if test="onlineService!=null and onlineService!=''">
+                or  online_service=#{onlineService}
+            </if>
+            <if test="hotline!=null and hotline!=''">
+                or  hotline=#{hotline}
+            </if>
+            <if test="storeSlides!=null and storeSlides!=''">
+                or  store_slides=#{storeSlides}
+            </if>
+            <if test="wapStoreSlides!=null and wapStoreSlides!=''">
+                or  wap_store_slides=#{wapStoreSlides}
+            </if>
+            <if test="longitude!=null and longitude!=''">
+                or  longitude=#{longitude}
+            </if>
+            <if test="latitude!=null and latitude!=''">
+                or  latitude=#{latitude}
+            </if>
+            <if test="zoom!=null and zoom!=''">
+                or  zoom=#{zoom}
+            </if>
+            </trim>
+        </where>
+    </sql>
+
+    <sql id="deleteSql">delete from   t_shop </sql>
+
+
+
+    <delete id="delete" >
+        <include refid="deleteSql"  />
+
+        <if test="id>0">
+            where
+            shop_id =#{id};
+        </if>
+        <if test="ids!=null">
+            and  shop_id in
+            <foreach collection="ids" item="item" separator="," open="(" close=")">
+                #{item}
+            </foreach>
+        </if>
+    </delete>
+
+    <select id="select" parameterType="com.shop.user.dto.ShopDto" resultMap="storeResultMap">
+        select * from  t_shop
+        <include refid="whereIf"/>
+    </select>
+
+    <select id="count" parameterType="com.shop.user.dto.ShopDto" resultType="java.lang.Long">
+        select count(*) from  t_shop
+        <include refid="whereIf"/>
+    </select>
+
+</mapper>

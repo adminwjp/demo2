@@ -1,0 +1,86 @@
+###服务端口号(本身是一个web项目)
+server:
+  port: 4007
+###起个名字作为服务名称(该服务注册到eureka注册中心的名称，比如商品服务)
+spring:
+#  jpa:
+#    show-sql: false
+#    properties:
+#      hibernate:
+#        jdbc:
+#          batch_size: 100
+#        order_inserts: true
+#        order_updates: true
+#        dialect: org.hibernate.dialect.MySQL5Dialect
+#    hibernate:
+#      ddl-auto: update
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: wjp930514.
+
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        # 健康检查失败多长时间后，取消注册
+        health-check-critical-timeout: 30s
+        health-check-path: /check
+        health-check-interval: 5s
+        prefer-ip-address: true
+        #instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+        instance-id: ${spring.application.name}:${server.port}
+        tags: url-prefix-/${spring.application.name}
+        enabled: true # 是否开启注册发现服务
+        service-name: kevin-${spring.application.name}
+        management-tags: url-prefix-/${spring.application.name}
+        register: true  # 是否将服务注册到Consul集群中心
+        deregister: true #服务停止时取消注册
+      retry:
+        initial-interval: 50
+    config:
+      server:
+        native:
+          search-locations: classpath:/dev
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    password: wjp930514.
+#    url: jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+
+  #  http:
+  #    encoding:
+  #      force: true
+  #      charset: utf-8
+  #      enabled: true
+
+  servlet:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
+
+  application:
+    name: user
+
+
+
+eureka:
+  instance:
+    #注册中心地址
+    hostname: 127.0.0.1
+    #port: 8082
+    # 每隔10s发送一次心跳
+    lease-renewal-interval-in-seconds: 10
+    # 告知服务端30秒还未收到心跳的话，就将该服务移除列表
+    lease-expiration-duration-in-seconds: 30
+  ###客户端调用地址
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:4000/eureka/
+    ###是否将自己注册到Eureka服务中,因为该应用本身就是注册中心，不需要再注册自己（集群的时候为true）
+    register-with-eureka: true
+    ###是否从Eureka中获取注册信息,因为自己为注册中心,不会在该应用中的检索服务信息
+    fetch-registry: true

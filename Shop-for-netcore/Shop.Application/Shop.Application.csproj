@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net48;net5.0</TargetFrameworks>
+    <RootNamespace>EventCloud</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.AutoMapper\Abp.AutoMapper.csproj" />
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.MailKit\Abp.MailKit.csproj" />
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.Quartz\Abp.Quartz.csproj" />
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.RedisCache\Abp.RedisCache.csproj" />
+    
+    
+     <!--<PackageReference Include="Abp.AutoMapper" Version="6.3.1" />
+     <PackageReference Include="Abp.MailKit" Version="6.3.1" />
+     <PackageReference Include="Abp.Quartz" Version="6.3.1" />
+     <PackageReference Include="Abp.RedisCache" Version="6.3.1" />-->
+    
+    <ProjectReference Include="..\Shop.Core\Shop.Core.csproj" />
+    <ProjectReference Include="..\Shop.Infrastructure\Shop.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EventCloud\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.user.front.mapper.RegionMapper">
+    <resultMap id="regionResultMap" type="com.shop.user.entity.Region">
+        <result property="regionId" column="region_id" javaType="long"></result>
+        <result property="regionName" column="region_name" javaType="java.lang.String"></result>
+        <result property="parentId" column="parent_id" javaType="java.lang.Long"></result>
+        <result property="sortOrder" column="sort_order" javaType="int"></result>
+        <result property="ifShow" column="if_show" javaType="boolean"></result>
+    </resultMap>
+
+
+    <insert id="add" parameterType="com.shop.user.entity.Region" >
+        insert into t_region
+        <trim suffixOverrides=",">
+        (
+           <if test="regionId!=null">
+               region_id,
+           </if>
+           <if test="regionName!=null and regionName!=''">
+               region_name,
+           </if>
+           <if test="parentId!=null">
+               parent_id,
+           </if>
+           <if test="sortOrder!=0">
+               sort_order,
+           </if>
+           <if test="ifShow!=null and ifShow!=''">
+               if_show,
+           </if>
+        </trim>
+        )
+        values
+        (
+        <trim suffixOverrides=",">
+           <if test="regionId!=null">
+               #{regionId},
+           </if>
+           <if test="regionName!=null and regionName!=''">
+               #{regionName},
+           </if>
+           <if test="parentId!=null">
+               #{parentId},
+           </if>
+           <if test="sortOrder!=0">
+               #{sortOrder},
+           </if>
+           <if test="ifShow!=null and ifShow!=''">
+               #{ifShow},
+           </if>
+        </trim>
+        )
+        </insert>
+
+    <update id="modify" parameterType="com.shop.user.entity.Region" >
+        update  t_region  
+        <trim prefix="set" suffixOverrides=",">
+            <if test="regionId!=null">
+               region_id=#{regionId},
+            </if>
+            <if test="regionName!=null and regionName!=''">
+               region_name=#{regionName},
+            </if>
+            <if test="parentId!=null">
+               parent_id=#{parentId},
+            </if>
+            <if test="sortOrder!=0">
+               sort_order=#{sortOrder},
+            </if>
+            <if test="ifShow!=null and ifShow!=''">
+               if_show=#{ifShow},
+            </if>
+        </trim>
+    </update>
+
+    <sql id="whereIf">
+        <where>
+            <if test="regionId!=null">
+                or  region_id=#{regionId}
+            </if>
+            <if test="regionName!=null and regionName!=''">
+                or  region_name=#{regionName}
+            </if>
+            <if test="parentId!=null">
+                or  parent_id=#{parentId}
+            </if>
+            <if test="sortOrder!=0">
+                or  sort_order=#{sortOrder}
+            </if>
+            <if test="ifShow!=null and ifShow!=''">
+                or  if_show=#{ifShow}
+            </if>
+        </where>
+    </sql>
+
+
+    <select id="select" parameterType="com.shop.user.entity.Region" resultMap="regionResultMap">
+        select * from  t_region
+        <include refid="whereIf"/>
+    </select>
+
+    <select id="count" parameterType="com.shop.user.entity.Region" resultType="java.lang.Integer">
+        select count(*) from  t_region
+        <include refid="whereIf"/>
+    </select>
+
+</mapper>

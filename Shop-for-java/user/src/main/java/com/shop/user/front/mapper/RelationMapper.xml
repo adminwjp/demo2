@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.user.front.mapper.RelationMapper">
+    <resultMap id="relationResultMap" type="com.shop.user.entity.Relation">
+        <result property="id" column="id" javaType="long"></result>
+
+        <result property="value1" column="value1" javaType="java.lang.Long" ></result>
+        <result property="value2" column="value2" javaType="java.lang.Long" ></result>
+        <result property="value3" column="value3" javaType="java.lang.Long" ></result>
+
+
+        <result property="strValue1" column="str_value1" javaType="java.lang.String" ></result>
+        <result property="strValue2" column="str_value2" javaType="java.lang.String" ></result>
+        <result property="strValue3" column="str_value3" javaType="java.lang.String" ></result>
+
+        <result property="description" column="description" javaType="java.lang.String" ></result>
+
+        <result property="relationType" column="relation_type" javaType="com.shop.RelationType" ></result>
+
+    </resultMap>
+
+
+    <insert id="add" parameterType="com.shop.user.entity.Relation" useGeneratedKeys="true" keyProperty="id">
+        insert into t_relation
+        <trim suffixOverrides=",">
+        (
+           <if test="id!=null">
+               id,
+           </if>
+           <if test="value1!=null">
+               value1,
+           </if>
+            <if test="value2!=null">
+                value2,
+            </if>
+            <if test="value3!=null">
+                value3,
+            </if>
+            <if test="strValue1!=null || strValue1!='' ">
+                str_value1,
+            </if>
+            <if test="strValue2!=null || strValue2!='' ">
+                str_value2,
+            </if>
+            <if test="strValue3!=null || strValue13='' ">
+                str_value3,
+            </if>
+            <if test="description!=null || description='' ">
+                description,
+            </if>
+            relation_type
+        </trim>
+        )
+        values
+        (
+        <trim suffixOverrides=",">
+            <if test="id!=null">
+                ${id},
+            </if>
+            <if test="value1!=null">
+                ${value1},
+            </if>
+            <if test="value2!=null">
+                ${value2},
+            </if>
+            <if test="value3!=null">
+                ${value3},
+            </if>
+            <if test="strValue1!=null || strValue1!='' ">
+                ${strValue1},
+            </if>
+            <if test="strValue2!=null || strValue2!='' ">
+                ${strValue2},
+            </if>
+            <if test="strValue3!=null || strValue13='' ">
+                ${strValue3},
+            </if>
+            <if test="description!=null || description='' ">
+                ${description},
+            </if>
+            ${relationType},
+        </trim>
+        )
+        </insert>
+
+    <update id="modify" parameterType="com.shop.user.entity.Relation" >
+        update  t_relation
+        <if test="value1!=null">
+            value1=${value1},
+        </if>
+        <if test="value2!=null">
+            value2= ${value2},
+        </if>
+        <if test="value3!=null">
+            value3=${value3},
+        </if>
+        <if test="strValue1!=null || strValue1!='' ">
+            str_value1= ${strValue1},
+        </if>
+        <if test="strValue2!=null || strValue2!='' ">
+            str_value2=${strValue2},
+        </if>
+        <if test="strValue3!=null || strValue13='' ">
+            str_value3=${strValue3},
+        </if>
+        <if test="description!=null || description='' ">
+            description= ${description},
+        </if>
+        relation_type=${relationType},
+         where id =#{id}
+    </update>
+
+    <sql id="deleteSql">delete from  t_relation where id </sql>
+
+    <delete id="delete" parameterType="long" >
+        <include refid="deleteSql"  /> =#{id}
+     </delete>
+
+    <delete id="deleteMany" >
+       <include refid="deleteSql"  />  in
+        <foreach collection="ids" index="index" item="item" open="(" separator="," close=")">
+             #{item}
+        </foreach>
+     </delete>
+
+    <sql id="whereIf">
+        <where>
+            <if test="id!=null">
+                or  id=#{id}
+            </if>
+            <if test="value1!=null">
+                or  value1=${value1},
+            </if>
+            <if test="value2!=null">
+                or  value2= ${value2},
+            </if>
+            <if test="value3!=null">
+                or  value3=${value3},
+            </if>
+            <if test="strValue1!=null || strValue1!='' ">
+                or  str_value1= ${strValue1},
+            </if>
+            <if test="strValue2!=null || strValue2!='' ">
+                or  str_value2=${strValue2},
+            </if>
+            <if test="strValue3!=null || strValue13='' ">
+                or  str_value3=${strValue3},
+            </if>
+            <if test="description!=null || description='' ">
+                or  description= ${description},
+            </if>
+            or relation_type=${relationType},
+        </where>
+    </sql>
+
+    <select id="select" parameterType="com.shop.user.entity.Relation" resultMap="relationResultMap">
+        select * from  t_relation
+        <include refid="whereIf"/>
+    </select>
+
+    <select id="count" parameterType="com.shop.user.entity.Relation" resultType="java.lang.Long">
+        select count(id) from  t_relation
+        <include refid="whereIf"/>
+    </select>
+
+</mapper>

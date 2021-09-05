@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.shop</groupId>
+  <artifactId>shop-for-java</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>shop-for-java</name>
+  <url>http://maven.apache.org</url>
+
+ <!--
+     配置Maven的仓库, 在此处配置的仓库会优先于setting.xml里配置的仓库,
+     建议哪个仓库快,哪个配置在前面, 然后如果Maven在前面配置的仓库找不到的话会去后面的仓库找，
+     如果后面的仓库都找不到，会去setting.xml中央仓库里找
+      -->
+    <repositories>
+        <!-- 阿里云仓库,配置Maven仓库，速度快配置在最前面 -->
+       <!-- <repository>
+            <id>aliyun</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>-->
+        <!-- 国内备选仓库 -->
+       <!-- <repository>
+            <id>repo2</id>
+            <url>http://repo2.maven.org/maven2/</url>
+        </repository>-->
+
+        <!-- Cloudera仓库,如果在阿里云仓库里找不到去Cloudera的仓库里找，主要是CDH版本Hadoop依赖的jar -->
+      <!--  <repository>
+            <id>cloudera</id>
+            <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+        </repository>-->
+
+        <!-- Scala仓库,如果前面两个都找不到来仓库找，如果此仓库也找不到，去中央仓库找 -->
+      <!--  <repository>
+            <id>scala-tools.org</id>
+            <name>Scala-Tools Maven2 Repository</name>
+            <url>http://scala-tools.org/repo-releases</url>
+        </repository>-->
+    </repositories>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <jdk.version>1.8</jdk.version>
+        <compiler.version>3.1</compiler.version>
+    </properties>
+
+    <parent>
+     <!--https://blog.csdn.net/weixin_42683077/article/details/106732554  -->
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <!--SpringBoot版本-->
+        <!-- spring boot mybaits 2.5.2  2.5.0 2.3.9.RELEASE  2.3.7.RELEASE  -->
+         <version>2.3.9.RELEASE </version>
+    </parent>
+
+    <modules>
+        <module>shop-common</module>
+        <module>shop-home</module>
+        <module>user</module>
+        <module>product</module>
+        <module>order</module>
+        <module>marketing</module>
+        <module>shop-admin</module>
+        <module>shop-front</module>
+        <module>dubbo-interface</module>
+        <module>dubbo-service/dubbo-service-provider</module>
+        <module>dubbo-service/dubbo-service-consumer</module>
+        <module>shop-dubbo</module>
+    </modules>
+
+<dependencies>
+
+</dependencies>
+
+<!-- <dependencyManagement>
+		 <dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Camden.SR6</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>-->
+
+    <build>
+        <finalName>shop-for-java</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <verbose>true</verbose></configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

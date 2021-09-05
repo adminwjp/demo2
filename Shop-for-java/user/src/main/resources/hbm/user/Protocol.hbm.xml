@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.shop.user.entity">
+    <class name="Protocol" table="t_protocol" >
+        <id name="protocolId" column="protocol_id" unsaved-value="0" >
+            <generator class="identity" />
+        </id>
+        <property name="title" column="title" type="java.lang.String" ></property>
+        <property name="cateId" column="cate_id" type="java.lang.Long" ></property>
+        <property name="storeId" column="store_id" type="java.lang.Long" ></property>
+        <property name="link" column="link" type="java.lang.String" ></property>
+        <property name="description" column="description" type="java.lang.String" ></property>
+        <property name="sortOrder" column="sort_order" type="int" ></property>
+        <property name="ifShow" column="if_show" type="boolean" ></property>
+        <property name="addTime" column="add_time" type="long" ></property>
+    </class>
+</hibernate-mapping>

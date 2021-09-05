@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="seller_coupon_product_ids" xml:space="preserve">
+    <value>product_ids is not null </value>
+  </data>
+  <data name="seller_coupon_product_ids_range" xml:space="preserve">
+    <value>product_ids length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_coupon_catagory_ids" xml:space="preserve">
+    <value>catagory_ids is not null </value>
+  </data>
+  <data name="seller_coupon_catagory_ids_range" xml:space="preserve">
+    <value>catagory_ids length {1} to  {2} chars </value>
+  </data>
+  <data name="gift_update_account" xml:space="preserve">
+    <value>update_account is not null </value>
+  </data>
+  <data name="gift_update_account_range" xml:space="preserve">
+    <value>update_account length {1} to  {2} chars </value>
+  </data>
+  <data name="gift_status" xml:space="preserve">
+    <value>status is not null </value>
+  </data>
+  <data name="gift_status_range" xml:space="preserve">
+    <value>status length {1} to  {2} chars </value>
+  </data>
+  <data name="gift_picture" xml:space="preserve">
+    <value>picture is not null </value>
+  </data>
+  <data name="gift_picture_range" xml:space="preserve">
+    <value>picture length {1} to  {2} chars </value>
+  </data>
+  <data name="gift_account" xml:space="preserve">
+    <value>account is not null </value>
+  </data>
+  <data name="gift_account_range" xml:space="preserve">
+    <value>account length {1} to  {2} chars </value>
+  </data>
+  <data name="gift_name" xml:space="preserve">
+    <value>name is not null </value>
+  </data>
+  <data name="gift_name_range" xml:space="preserve">
+    <value>name length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_prize_setting_name" xml:space="preserve">
+    <value>name is not null </value>
+  </data>
+  <data name="seller_prize_setting_name_range" xml:space="preserve">
+    <value>name length {1} to  {2} chars </value>
+  </data>
+  <data name="audit_in_role_item_key" xml:space="preserve">
+    <value>item_key is not null </value>
+  </data>
+  <data name="audit_in_role_item_key_range" xml:space="preserve">
+    <value>item_key length {1} to  {2} chars </value>
+  </data>
+  <data name="email_account" xml:space="preserve">
+    <value>account is not null </value>
+  </data>
+  <data name="email_account_range" xml:space="preserve">
+    <value>account length {1} to  {2} chars </value>
+  </data>
+  <data name="email_emails" xml:space="preserve">
+    <value>emails is not null </value>
+  </data>
+  <data name="email_emails_range" xml:space="preserve">
+    <value>emails length {1} to  {2} chars </value>
+  </data>
+  <data name="email_scrept" xml:space="preserve">
+    <value>scrept is not null </value>
+  </data>
+  <data name="email_scrept_range" xml:space="preserve">
+    <value>scrept length {1} to  {2} chars </value>
+  </data>
+  <data name="email_notify_product_product_name" xml:space="preserve">
+    <value>product_name is not null </value>
+  </data>
+  <data name="email_notify_product_product_name_range" xml:space="preserve">
+    <value>product_name length {1} to  {2} chars </value>
+  </data>
+  <data name="email_notify_product_receive_email" xml:space="preserve">
+    <value>receive_email is not null </value>
+  </data>
+  <data name="email_notify_product_receive_email_range" xml:space="preserve">
+    <value>receive_email length {1} to  {2} chars </value>
+  </data>
+  <data name="email_notify_product_product_i_d" xml:space="preserve">
+    <value>product_i_d is not null </value>
+  </data>
+  <data name="email_notify_product_product_i_d_range" xml:space="preserve">
+    <value>product_i_d length {1} to  {2} chars </value>
+  </data>
+  <data name="email_notify_product_account" xml:space="preserve">
+    <value>account is not null </value>
+  </data>
+  <data name="email_notify_product_account_range" xml:space="preserve">
+    <value>account length {1} to  {2} chars </value>
+  </data>
+  <data name="product_msg_product_ids" xml:space="preserve">
+    <value>product_ids is not null </value>
+  </data>
+  <data name="product_msg_product_ids_range" xml:space="preserve">
+    <value>product_ids length {1} to  {2} chars </value>
+  </data>
+  <data name="product_msg_title" xml:space="preserve">
+    <value>title is not null </value>
+  </data>
+  <data name="product_msg_title_range" xml:space="preserve">
+    <value>title length {1} to  {2} chars </value>
+  </data>
+  <data name="product_msg_msg" xml:space="preserve">
+    <value>msg is not null </value>
+  </data>
+  <data name="product_msg_msg_range" xml:space="preserve">
+    <value>msg length {1} to  {2} chars </value>
+  </data>
+  <data name="product_msg_pic" xml:space="preserve">
+    <value>pic is not null </value>
+  </data>
+  <data name="product_msg_pic_range" xml:space="preserve">
+    <value>pic length {1} to  {2} chars </value>
+  </data>
+  <data name="cart_product_ids" xml:space="preserve">
+    <value>product_ids is not null </value>
+  </data>
+  <data name="cart_product_ids_range" xml:space="preserve">
+    <value>product_ids length {1} to  {2} chars </value>
+  </data>
+  <data name="order_status" xml:space="preserve">
+    <value>status is not null </value>
+  </data>
+  <data name="order_status_range" xml:space="preserve">
+    <value>status length {1} to  {2} chars </value>
+  </data>
+  <data name="order_express_company_name" xml:space="preserve">
+    <value>express_company_name is not null </value>
+  </data>
+  <data name="order_express_company_name_range" xml:space="preserve">
+    <value>express_company_name length {1} to  {2} chars </value>
+  </data>
+  <data name="order_low_stocks" xml:space="preserve">
+    <value>low_stocks is not null </value>
+  </data>
+  <data name="order_low_stocks_range" xml:space="preserve">
+    <value>low_stocks length {1} to  {2} chars </value>
+  </data>
+  <data name="order_refund_status" xml:space="preserve">
+    <value>refund_status is not null </value>
+  </data>
+  <data name="order_refund_status_range" xml:space="preserve">
+    <value>refund_status length {1} to  {2} chars </value>
+  </data>
+  <data name="order_other_requirement" xml:space="preserve">
+    <value>other_requirement is not null </value>
+  </data>
+  <data name="order_other_requirement_range" xml:space="preserve">
+    <value>other_requirement length {1} to  {2} chars </value>
+  </data>
+  <data name="order_paystatus" xml:space="preserve">
+    <value>paystatus is not null </value>
+  </data>
+  <data name="order_paystatus_range" xml:space="preserve">
+    <value>paystatus length {1} to  {2} chars </value>
+  </data>
+  <data name="order_remark" xml:space="preserve">
+    <value>remark is not null </value>
+  </data>
+  <data name="order_remark_range" xml:space="preserve">
+    <value>remark length {1} to  {2} chars </value>
+  </data>
+  <data name="order_closed_comment" xml:space="preserve">
+    <value>closed_comment is not null </value>
+  </data>
+  <data name="order_closed_comment_range" xml:space="preserve">
+    <value>closed_comment length {1} to  {2} chars </value>
+  </data>
+  <data name="order_express_no" xml:space="preserve">
+    <value>express_no is not null </value>
+  </data>
+  <data name="order_express_no_range" xml:space="preserve">
+    <value>express_no length {1} to  {2} chars </value>
+  </data>
+  <data name="order_express_name" xml:space="preserve">
+    <value>express_name is not null </value>
+  </data>
+  <data name="order_express_name_range" xml:space="preserve">
+    <value>express_name length {1} to  {2} chars </value>
+  </data>
+  <data name="order_confirm_send_product_remark" xml:space="preserve">
+    <value>confirm_send_product_remark is not null </value>
+  </data>
+  <data name="order_confirm_send_product_remark_range" xml:space="preserve">
+    <value>confirm_send_product_remark length {1} to  {2} chars </value>
+  </data>
+  <data name="order_express_code" xml:space="preserve">
+    <value>express_code is not null </value>
+  </data>
+  <data name="order_express_code_range" xml:space="preserve">
+    <value>express_code length {1} to  {2} chars </value>
+  </data>
+  <data name="order_account" xml:space="preserve">
+    <value>account is not null </value>
+  </data>
+  <data name="order_account_range" xml:space="preserve">
+    <value>account length {1} to  {2} chars </value>
+  </data>
+  <data name="order_detail_is_comment" xml:space="preserve">
+    <value>is_comment is not null </value>
+  </data>
+  <data name="order_detail_is_comment_range" xml:space="preserve">
+    <value>is_comment length {1} to  {2} chars </value>
+  </data>
+  <data name="order_detail_product_name" xml:space="preserve">
+    <value>product_name is not null </value>
+  </data>
+  <data name="order_detail_product_name_range" xml:space="preserve">
+    <value>product_name length {1} to  {2} chars </value>
+  </data>
+  <data name="order_detail_gift_i_d" xml:space="preserve">
+    <value>gift_i_d is not null </value>
+  </data>
+  <data name="order_detail_gift_i_d_range" xml:space="preserve">
+    <value>gift_i_d length {1} to  {2} chars </value>
+  </data>
+  <data name="order_detail_spec_info" xml:space="preserve">
+    <value>spec_info is not null </value>
+  </data>
+  <data name="order_detail_spec_info_range" xml:space="preserve">
+    <value>spec_info length {1} to  {2} chars </value>
+  </data>
+  <data name="order_detail_low_stocks" xml:space="preserve">
+    <value>low_stocks is not null </value>
+  </data>
+  <data name="order_detail_low_stocks_range" xml:space="preserve">
+    <value>low_stocks length {1} to  {2} chars </value>
+  </data>
+  <data name="order_pay_order_id" xml:space="preserve">
+    <value>order_id is not null </value>
+  </data>
+  <data name="order_pay_order_id_range" xml:space="preserve">
+    <value>order_id length {1} to  {2} chars </value>
+  </data>
+  <data name="order_pay_trade_no" xml:space="preserve">
+    <value>trade_no is not null </value>
+  </data>
+  <data name="order_pay_trade_no_range" xml:space="preserve">
+    <value>trade_no length {1} to  {2} chars </value>
+  </data>
+  <data name="order_pay_remark" xml:space="preserve">
+    <value>remark is not null </value>
+  </data>
+  <data name="order_pay_remark_range" xml:space="preserve">
+    <value>remark length {1} to  {2} chars </value>
+  </data>
+  <data name="order_pay_pay_method" xml:space="preserve">
+    <value>pay_method is not null </value>
+  </data>
+  <data name="order_pay_pay_method_range" xml:space="preserve">
+    <value>pay_method length {1} to  {2} chars </value>
+  </data>
+  <data name="order_pay_confirm_user" xml:space="preserve">
+    <value>confirm_user is not null </value>
+  </data>
+  <data name="order_pay_confirm_user_range" xml:space="preserve">
+    <value>confirm_user length {1} to  {2} chars </value>
+  </data>
+  <data name="order_pay_pay_status" xml:space="preserve">
+    <value>pay_status is not null </value>
+  </data>
+  <data name="order_pay_pay_status_range" xml:space="preserve">
+    <value>pay_status length {1} to  {2} chars </value>
+  </data>
+  <data name="order_log_order_id" xml:space="preserve">
+    <value>order_id is not null </value>
+  </data>
+  <data name="order_log_order_id_range" xml:space="preserve">
+    <value>order_id length {1} to  {2} chars </value>
+  </data>
+  <data name="order_log_content" xml:space="preserve">
+    <value>content is not null </value>
+  </data>
+  <data name="order_log_content_range" xml:space="preserve">
+    <value>content length {1} to  {2} chars </value>
+  </data>
+  <data name="order_log_account_type" xml:space="preserve">
+    <value>account_type is not null </value>
+  </data>
+  <data name="order_log_account_type_range" xml:space="preserve">
+    <value>account_type length {1} to  {2} chars </value>
+  </data>
+  <data name="order_log_account" xml:space="preserve">
+    <value>account is not null </value>
+  </data>
+  <data name="order_log_account_range" xml:space="preserve">
+    <value>account length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_tel" xml:space="preserve">
+    <value>tel is not null </value>
+  </data>
+  <data name="order_ship_tel_range" xml:space="preserve">
+    <value>tel length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_city_code" xml:space="preserve">
+    <value>city_code is not null </value>
+  </data>
+  <data name="order_ship_city_code_range" xml:space="preserve">
+    <value>city_code length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_city" xml:space="preserve">
+    <value>city is not null </value>
+  </data>
+  <data name="order_ship_city_range" xml:space="preserve">
+    <value>city length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_province" xml:space="preserve">
+    <value>province is not null </value>
+  </data>
+  <data name="order_ship_province_range" xml:space="preserve">
+    <value>province length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_sex" xml:space="preserve">
+    <value>sex is not null </value>
+  </data>
+  <data name="order_ship_sex_range" xml:space="preserve">
+    <value>sex length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_area_code" xml:space="preserve">
+    <value>area_code is not null </value>
+  </data>
+  <data name="order_ship_area_code_range" xml:space="preserve">
+    <value>area_code length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_zip" xml:space="preserve">
+    <value>zip is not null </value>
+  </data>
+  <data name="order_ship_zip_range" xml:space="preserve">
+    <value>zip length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_shipname" xml:space="preserve">
+    <value>shipname is not null </value>
+  </data>
+  <data name="order_ship_shipname_range" xml:space="preserve">
+    <value>shipname length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_order_id" xml:space="preserve">
+    <value>order_id is not null </value>
+  </data>
+  <data name="order_ship_order_id_range" xml:space="preserve">
+    <value>order_id length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_province_code" xml:space="preserve">
+    <value>province_code is not null </value>
+  </data>
+  <data name="order_ship_province_code_range" xml:space="preserve">
+    <value>province_code length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_remark" xml:space="preserve">
+    <value>remark is not null </value>
+  </data>
+  <data name="order_ship_remark_range" xml:space="preserve">
+    <value>remark length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_phone" xml:space="preserve">
+    <value>phone is not null </value>
+  </data>
+  <data name="order_ship_phone_range" xml:space="preserve">
+    <value>phone length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_shipaddress" xml:space="preserve">
+    <value>shipaddress is not null </value>
+  </data>
+  <data name="order_ship_shipaddress_range" xml:space="preserve">
+    <value>shipaddress length {1} to  {2} chars </value>
+  </data>
+  <data name="order_ship_area" xml:space="preserve">
+    <value>area is not null </value>
+  </data>
+  <data name="order_ship_area_range" xml:space="preserve">
+    <value>area length {1} to  {2} chars </value>
+  </data>
+  <data name="product_catagory_i_d" xml:space="preserve">
+    <value>catagory_i_d is not null </value>
+  </data>
+  <data name="product_catagory_i_d_range" xml:space="preserve">
+    <value>catagory_i_d length {1} to  {2} chars </value>
+  </data>
+  <data name="product_keywords" xml:space="preserve">
+    <value>keywords is not null </value>
+  </data>
+  <data name="product_keywords_range" xml:space="preserve">
+    <value>keywords length {1} to  {2} chars </value>
+  </data>
+  <data name="product_create_account" xml:space="preserve">
+    <value>create_account is not null </value>
+  </data>
+  <data name="product_create_account_range" xml:space="preserve">
+    <value>create_account length {1} to  {2} chars </value>
+  </data>
+  <data name="product_title" xml:space="preserve">
+    <value>title is not null </value>
+  </data>
+  <data name="product_title_range" xml:space="preserve">
+    <value>title length {1} to  {2} chars </value>
+  </data>
+  <data name="product_update_account" xml:space="preserve">
+    <value>update_account is not null </value>
+  </data>
+  <data name="product_update_account_range" xml:space="preserve">
+    <value>update_account length {1} to  {2} chars </value>
+  </data>
+  <data name="product_is_time_promotion" xml:space="preserve">
+    <value>is_time_promotion is not null </value>
+  </data>
+  <data name="product_is_time_promotion_range" xml:space="preserve">
+    <value>is_time_promotion length {1} to  {2} chars </value>
+  </data>
+  <data name="product_product_h_t_m_l" xml:space="preserve">
+    <value>product_h_t_m_l is not null </value>
+  </data>
+  <data name="product_product_h_t_m_l_range" xml:space="preserve">
+    <value>product_h_t_m_l length {1} to  {2} chars </value>
+  </data>
+  <data name="product_isnew" xml:space="preserve">
+    <value>isnew is not null </value>
+  </data>
+  <data name="product_isnew_range" xml:space="preserve">
+    <value>isnew length {1} to  {2} chars </value>
+  </data>
+  <data name="product_introduce" xml:space="preserve">
+    <value>introduce is not null </value>
+  </data>
+  <data name="product_introduce_range" xml:space="preserve">
+    <value>introduce length {1} to  {2} chars </value>
+  </data>
+  <data name="product_search_key" xml:space="preserve">
+    <value>search_key is not null </value>
+  </data>
+  <data name="product_search_key_range" xml:space="preserve">
+    <value>search_key length {1} to  {2} chars </value>
+  </data>
+  <data name="product_images" xml:space="preserve">
+    <value>images is not null </value>
+  </data>
+  <data name="product_images_range" xml:space="preserve">
+    <value>images length {1} to  {2} chars </value>
+  </data>
+  <data name="product_max_picture" xml:space="preserve">
+    <value>max_picture is not null </value>
+  </data>
+  <data name="product_max_picture_range" xml:space="preserve">
+    <value>max_picture length {1} to  {2} chars </value>
+  </data>
+  <data name="product_description" xml:space="preserve">
+    <value>description is not null </value>
+  </data>
+  <data name="product_description_range" xml:space="preserve">
+    <value>description length {1} to  {2} chars </value>
+  </data>
+  <data name="product_unit" xml:space="preserve">
+    <value>unit is not null </value>
+  </data>
+  <data name="product_unit_range" xml:space="preserve">
+    <value>unit length {1} to  {2} chars </value>
+  </data>
+  <data name="product_picture" xml:space="preserve">
+    <value>picture is not null </value>
+  </data>
+  <data name="product_picture_range" xml:space="preserve">
+    <value>picture length {1} to  {2} chars </value>
+  </data>
+  <data name="product_name" xml:space="preserve">
+    <value>name is not null </value>
+  </data>
+  <data name="product_name_range" xml:space="preserve">
+    <value>name length {1} to  {2} chars </value>
+  </data>
+  <data name="product_sale" xml:space="preserve">
+    <value>sale is not null </value>
+  </data>
+  <data name="product_sale_range" xml:space="preserve">
+    <value>sale length {1} to  {2} chars </value>
+  </data>
+  <data name="product_catagory_name" xml:space="preserve">
+    <value>name is not null </value>
+  </data>
+  <data name="product_catagory_name_range" xml:space="preserve">
+    <value>name length {1} to  {2} chars </value>
+  </data>
+  <data name="product_catagory_code" xml:space="preserve">
+    <value>code is not null </value>
+  </data>
+  <data name="product_catagory_code_range" xml:space="preserve">
+    <value>code length {1} to  {2} chars </value>
+  </data>
+  <data name="product_catagory_href" xml:space="preserve">
+    <value>href is not null </value>
+  </data>
+  <data name="product_catagory_href_range" xml:space="preserve">
+    <value>href length {1} to  {2} chars </value>
+  </data>
+  <data name="product_catagory_picture" xml:space="preserve">
+    <value>picture is not null </value>
+  </data>
+  <data name="product_catagory_picture_range" xml:space="preserve">
+    <value>picture length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_realname" xml:space="preserve">
+    <value>realname is not null </value>
+  </data>
+  <data name="buyer_realname_range" xml:space="preserve">
+    <value>realname length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_headimgurl" xml:space="preserve">
+    <value>headimgurl is not null </value>
+  </data>
+  <data name="buyer_headimgurl_range" xml:space="preserve">
+    <value>headimgurl length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_open_id" xml:space="preserve">
+    <value>open_id is not null </value>
+  </data>
+  <data name="buyer_open_id_range" xml:space="preserve">
+    <value>open_id length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_im_qq" xml:space="preserve">
+    <value>im_qq is not null </value>
+  </data>
+  <data name="buyer_im_qq_range" xml:space="preserve">
+    <value>im_qq length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_auth_app_id" xml:space="preserve">
+    <value>auth_app_id is not null </value>
+  </data>
+  <data name="buyer_auth_app_id_range" xml:space="preserve">
+    <value>auth_app_id length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_language" xml:space="preserve">
+    <value>language is not null </value>
+  </data>
+  <data name="buyer_language_range" xml:space="preserve">
+    <value>language length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_city" xml:space="preserve">
+    <value>city is not null </value>
+  </data>
+  <data name="buyer_city_range" xml:space="preserve">
+    <value>city length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_province" xml:space="preserve">
+    <value>province is not null </value>
+  </data>
+  <data name="buyer_province_range" xml:space="preserve">
+    <value>province length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_country" xml:space="preserve">
+    <value>country is not null </value>
+  </data>
+  <data name="buyer_country_range" xml:space="preserve">
+    <value>country length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_remark" xml:space="preserve">
+    <value>remark is not null </value>
+  </data>
+  <data name="buyer_remark_range" xml:space="preserve">
+    <value>remark length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_refresh_token" xml:space="preserve">
+    <value>refresh_token is not null </value>
+  </data>
+  <data name="buyer_refresh_token_range" xml:space="preserve">
+    <value>refresh_token length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_unionid" xml:space="preserve">
+    <value>unionid is not null </value>
+  </data>
+  <data name="buyer_unionid_range" xml:space="preserve">
+    <value>unionid length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_account" xml:space="preserve">
+    <value>account is not null </value>
+  </data>
+  <data name="buyer_account_range" xml:space="preserve">
+    <value>account length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_phone" xml:space="preserve">
+    <value>phone is not null </value>
+  </data>
+  <data name="buyer_phone_range" xml:space="preserve">
+    <value>phone length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_email" xml:space="preserve">
+    <value>email is not null </value>
+  </data>
+  <data name="buyer_email_range" xml:space="preserve">
+    <value>email length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_pwd" xml:space="preserve">
+    <value>pwd is not null </value>
+  </data>
+  <data name="buyer_pwd_range" xml:space="preserve">
+    <value>pwd length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_name" xml:space="preserve">
+    <value>name is not null </value>
+  </data>
+  <data name="buyer_name_range" xml:space="preserve">
+    <value>name length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_sex" xml:space="preserve">
+    <value>sex is not null </value>
+  </data>
+  <data name="buyer_sex_range" xml:space="preserve">
+    <value>sex length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_address" xml:space="preserve">
+    <value>address is not null </value>
+  </data>
+  <data name="buyer_address_range" xml:space="preserve">
+    <value>address length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_postcode" xml:space="preserve">
+    <value>postcode is not null </value>
+  </data>
+  <data name="buyer_postcode_range" xml:space="preserve">
+    <value>postcode length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_realname" xml:space="preserve">
+    <value>realname is not null </value>
+  </data>
+  <data name="seller_realname_range" xml:space="preserve">
+    <value>realname length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_headimgurl" xml:space="preserve">
+    <value>headimgurl is not null </value>
+  </data>
+  <data name="seller_headimgurl_range" xml:space="preserve">
+    <value>headimgurl length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_open_id" xml:space="preserve">
+    <value>open_id is not null </value>
+  </data>
+  <data name="seller_open_id_range" xml:space="preserve">
+    <value>open_id length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_im_qq" xml:space="preserve">
+    <value>im_qq is not null </value>
+  </data>
+  <data name="seller_im_qq_range" xml:space="preserve">
+    <value>im_qq length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_auth_app_id" xml:space="preserve">
+    <value>auth_app_id is not null </value>
+  </data>
+  <data name="seller_auth_app_id_range" xml:space="preserve">
+    <value>auth_app_id length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_language" xml:space="preserve">
+    <value>language is not null </value>
+  </data>
+  <data name="seller_language_range" xml:space="preserve">
+    <value>language length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_city" xml:space="preserve">
+    <value>city is not null </value>
+  </data>
+  <data name="seller_city_range" xml:space="preserve">
+    <value>city length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_province" xml:space="preserve">
+    <value>province is not null </value>
+  </data>
+  <data name="seller_province_range" xml:space="preserve">
+    <value>province length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_country" xml:space="preserve">
+    <value>country is not null </value>
+  </data>
+  <data name="seller_country_range" xml:space="preserve">
+    <value>country length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_remark" xml:space="preserve">
+    <value>remark is not null </value>
+  </data>
+  <data name="seller_remark_range" xml:space="preserve">
+    <value>remark length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_refresh_token" xml:space="preserve">
+    <value>refresh_token is not null </value>
+  </data>
+  <data name="seller_refresh_token_range" xml:space="preserve">
+    <value>refresh_token length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_unionid" xml:space="preserve">
+    <value>unionid is not null </value>
+  </data>
+  <data name="seller_unionid_range" xml:space="preserve">
+    <value>unionid length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_account" xml:space="preserve">
+    <value>account is not null </value>
+  </data>
+  <data name="seller_account_range" xml:space="preserve">
+    <value>account length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_phone" xml:space="preserve">
+    <value>phone is not null </value>
+  </data>
+  <data name="seller_phone_range" xml:space="preserve">
+    <value>phone length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_email" xml:space="preserve">
+    <value>email is not null </value>
+  </data>
+  <data name="seller_email_range" xml:space="preserve">
+    <value>email length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_pwd" xml:space="preserve">
+    <value>pwd is not null </value>
+  </data>
+  <data name="seller_pwd_range" xml:space="preserve">
+    <value>pwd length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_name" xml:space="preserve">
+    <value>name is not null </value>
+  </data>
+  <data name="seller_name_range" xml:space="preserve">
+    <value>name length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_sex" xml:space="preserve">
+    <value>sex is not null </value>
+  </data>
+  <data name="seller_sex_range" xml:space="preserve">
+    <value>sex length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_address" xml:space="preserve">
+    <value>address is not null </value>
+  </data>
+  <data name="seller_address_range" xml:space="preserve">
+    <value>address length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_postcode" xml:space="preserve">
+    <value>postcode is not null </value>
+  </data>
+  <data name="seller_postcode_range" xml:space="preserve">
+    <value>postcode length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_address_contact_name" xml:space="preserve">
+    <value>contact_name is not null </value>
+  </data>
+  <data name="buyer_address_contact_name_range" xml:space="preserve">
+    <value>contact_name length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_address_address" xml:space="preserve">
+    <value>address is not null </value>
+  </data>
+  <data name="buyer_address_address_range" xml:space="preserve">
+    <value>address length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_address_city" xml:space="preserve">
+    <value>city is not null </value>
+  </data>
+  <data name="buyer_address_city_range" xml:space="preserve">
+    <value>city length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_address_province" xml:space="preserve">
+    <value>province is not null </value>
+  </data>
+  <data name="buyer_address_province_range" xml:space="preserve">
+    <value>province length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_address_country" xml:space="preserve">
+    <value>country is not null </value>
+  </data>
+  <data name="buyer_address_country_range" xml:space="preserve">
+    <value>country length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_address_memo" xml:space="preserve">
+    <value>memo is not null </value>
+  </data>
+  <data name="buyer_address_memo_range" xml:space="preserve">
+    <value>memo length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_address_phone" xml:space="preserve">
+    <value>phone is not null </value>
+  </data>
+  <data name="buyer_address_phone_range" xml:space="preserve">
+    <value>phone length {1} to  {2} chars </value>
+  </data>
+  <data name="buyer_address_post_code" xml:space="preserve">
+    <value>post_code is not null </value>
+  </data>
+  <data name="buyer_address_post_code_range" xml:space="preserve">
+    <value>post_code length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_address_contact_name" xml:space="preserve">
+    <value>contact_name is not null </value>
+  </data>
+  <data name="seller_address_contact_name_range" xml:space="preserve">
+    <value>contact_name length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_address_address" xml:space="preserve">
+    <value>address is not null </value>
+  </data>
+  <data name="seller_address_address_range" xml:space="preserve">
+    <value>address length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_address_city" xml:space="preserve">
+    <value>city is not null </value>
+  </data>
+  <data name="seller_address_city_range" xml:space="preserve">
+    <value>city length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_address_province" xml:space="preserve">
+    <value>province is not null </value>
+  </data>
+  <data name="seller_address_province_range" xml:space="preserve">
+    <value>province length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_address_country" xml:space="preserve">
+    <value>country is not null </value>
+  </data>
+  <data name="seller_address_country_range" xml:space="preserve">
+    <value>country length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_address_memo" xml:space="preserve">
+    <value>memo is not null </value>
+  </data>
+  <data name="seller_address_memo_range" xml:space="preserve">
+    <value>memo length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_address_phone" xml:space="preserve">
+    <value>phone is not null </value>
+  </data>
+  <data name="seller_address_phone_range" xml:space="preserve">
+    <value>phone length {1} to  {2} chars </value>
+  </data>
+  <data name="seller_address_post_code" xml:space="preserve">
+    <value>post_code is not null </value>
+  </data>
+  <data name="seller_address_post_code_range" xml:space="preserve">
+    <value>post_code length {1} to  {2} chars </value>
+  </data>
+  <data name="sms_app_id" xml:space="preserve">
+    <value>app_id is not null </value>
+  </data>
+  <data name="sms_app_id_range" xml:space="preserve">
+    <value>app_id length {1} to  {2} chars </value>
+  </data>
+  <data name="sms_secrt" xml:space="preserve">
+    <value>secrt is not null </value>
+  </data>
+  <data name="sms_secrt_range" xml:space="preserve">
+    <value>secrt length {1} to  {2} chars </value>
+  </data>
+
+</root>

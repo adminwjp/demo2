@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.user.front.mapper.FriendMapper">
+    <resultMap id="friendResultMap" type="com.shop.user.dto.FriendDto">
+        <result property="id" column="id" javaType="long"></result>
+        <result property="userid" column="userid" javaType="java.lang.Long"></result>
+        <result property="friendId" column="friend_id" javaType="java.lang.Long"></result>
+        <result property="addTime" column="add_time" javaType="java.lang.Long"></result>
+    </resultMap>
+
+    <sql id="user">
+        <if test="userType=='buyer'">
+            t_buyer_friend
+        </if>
+        <if test="userType=='seller'">
+            t_seller_friend
+        </if>
+        <if test="userType=='agent'">
+            t_agent_friend
+        </if>
+        <if test="userType=='manufacturer'">
+            t_manufacturer_friend
+        </if>
+        <if test="userType=='platform'">
+            t_platform_friend
+        </if>
+    </sql>
+    <insert id="add" parameterType="com.shop.user.dto.FriendDto" useGeneratedKeys="true" keyProperty="id">
+        insert into
+        <include refid="user"/>
+        <trim suffixOverrides=",">
+        (
+           <if test="userid!=null">
+               userid,
+           </if>
+           <if test="friendId!=null">
+               friend_id,
+           </if>
+            add_time
+        </trim>
+        )
+        values
+        (
+        <trim suffixOverrides=",">
+           <if test="userid!=null">
+               #{userid},
+           </if>
+           <if test="friendId!=null">
+               #{friendId},
+           </if>
+            #{addTime}
+        </trim>
+        )
+        </insert>
+
+    <update id="modify" parameterType="com.shop.user.dto.FriendDto" >
+        update   <include refid="user"/>
+        <trim prefix="set" suffixOverrides=",">
+            <if test="userid!=null">
+               userid=#{userid},
+            </if>
+            <if test="friendId!=null">
+               friend_id=#{friendId},
+            </if>
+        </trim>
+         where id =#{id}
+    </update>
+
+    <sql id="deleteSql">delete from   <include refid="user"/></sql>
+
+
+
+    <delete id="delete" >
+       <include refid="deleteSql"  />
+        where userid=#{userId}
+
+        <if test="id>0">
+            and
+            id =#{id};
+        </if>
+        <if test="ids!=null">
+            and  id in
+            <foreach collection="ids" item="item" separator="," open="(" close=")">
+                #{item}
+            </foreach>
+        </if>
+     </delete>
+
+    <sql id="whereIf">
+        <where>
+            <trim  prefixOverrides="or">
+            <if test="id!=null">
+                or  id=#{id}
+            </if>
+            <if test="userid!=null">
+                or  userid=#{userid}
+            </if>
+            <if test="friendId!=null">
+                or  friend_id=#{friendId}
+            </if>
+            <if test="addTime>0">
+                or  add_time=#{addTime}
+            </if>
+            </trim>
+        </where>
+    </sql>
+
+    <select id="select" parameterType="com.shop.user.dto.FriendDto" resultMap="friendResultMap">
+        select * from   <include refid="user"/>
+        <include refid="whereIf"/>
+    </select>
+
+    <select id="count" parameterType="com.shop.user.dto.FriendDto" resultType="java.lang.Long">
+        select count(id) from   <include refid="user"/>
+        <include refid="whereIf"/>
+    </select>
+
+</mapper>

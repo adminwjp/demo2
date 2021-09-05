@@ -1,0 +1,22 @@
+package com.utility.demo.config;
+
+import javax.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+
+@Component
+public class DatabaseInitializer {
+
+	//Consider defining a bean of type 'org.springframework.jdbc.core.JdbcTemplate' in
+	// your configuration.
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+
+	@PostConstruct
+	public void init() {
+		jdbcTemplate.update("insert into t_user (account,name,age,balance) values ('account1','Alice',20,100.00);");
+		jdbcTemplate.update("insert into t_user (account,name,age,balance) values ('account2','Bob',28,180.00);");
+		jdbcTemplate.update("insert into t_user (account,name,age,balance) values ('account3','Cat',34,280.00);");
+	}
+}

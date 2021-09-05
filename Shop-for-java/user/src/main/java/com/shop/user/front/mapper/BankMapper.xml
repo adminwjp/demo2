@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.user.front.mapper.BankMapper">
+    <resultMap id="bankResultMap" type="com.shop.user.dto.BankDto">
+        <result property="bid" column="bid" javaType="long"></result>
+        <result property="userid" column="userid" javaType="java.lang.Long"></result>
+        <result property="bankName" column="bank_name" javaType="java.lang.String"></result>
+        <result property="shortName" column="short_name" javaType="java.lang.String"></result>
+        <result property="accountName" column="account_name" javaType="java.lang.String"></result>
+        <result property="openBank" column="open_bank" javaType="java.lang.String"></result>
+        <result property="type" column="type" javaType="java.lang.String"></result>
+        <result property="num" column="num" javaType="java.lang.Integer"></result>
+    </resultMap>
+
+
+    <insert id="add" parameterType="com.shop.user.dto.BankDto" >
+        insert into t_bank
+        <trim suffixOverrides=",">
+        (
+           <if test="bid!=null">
+               bid,
+           </if>
+           <if test="userid!=null">
+               userid,
+           </if>
+           <if test="bankName!=null and bankName!=''">
+               bank_name,
+           </if>
+           <if test="shortName!=null and shortName!=''">
+               short_name,
+           </if>
+           <if test="accountName!=null and accountName!=''">
+               account_name,
+           </if>
+           <if test="openBank!=null and openBank!=''">
+               open_bank,
+           </if>
+           <if test="type!=null and type!=''">
+               type,
+           </if>
+           <if test="num!=null">
+               num,
+           </if>
+        </trim>
+        )
+        values
+        (
+        <trim suffixOverrides=",">
+           <if test="bid!=null">
+               #{bid},
+           </if>
+           <if test="userid!=null">
+               #{userid},
+           </if>
+           <if test="bankName!=null and bankName!=''">
+               #{bankName},
+           </if>
+           <if test="shortName!=null and shortName!=''">
+               #{shortName},
+           </if>
+           <if test="accountName!=null and accountName!=''">
+               #{accountName},
+           </if>
+           <if test="openBank!=null and openBank!=''">
+               #{openBank},
+           </if>
+           <if test="type!=null and type!=''">
+               #{type},
+           </if>
+           <if test="num!=null">
+               #{num},
+           </if>
+        </trim>
+        )
+        </insert>
+
+    <update id="modify" parameterType="com.shop.user.dto.BankDto" >
+        update  t_bank  
+        <trim prefix="set" suffixOverrides=",">
+            <if test="bid!=null">
+               bid=#{bid},
+            </if>
+            <if test="userid!=null">
+               userid=#{userid},
+            </if>
+            <if test="bankName!=null and bankName!=''">
+               bank_name=#{bankName},
+            </if>
+            <if test="shortName!=null and shortName!=''">
+               short_name=#{shortName},
+            </if>
+            <if test="accountName!=null and accountName!=''">
+               account_name=#{accountName},
+            </if>
+            <if test="openBank!=null and openBank!=''">
+               open_bank=#{openBank},
+            </if>
+            <if test="type!=null and type!=''">
+               type=#{type},
+            </if>
+            <if test="num!=null">
+               num=#{num},
+            </if>
+        </trim>
+    </update>
+
+    <sql id="whereIf">
+        <where>
+            <trim  prefixOverrides="or">
+            <if test="bid!=null">
+                or  bid=#{bid}
+            </if>
+            <if test="userid!=null">
+                or  userid=#{userid}
+            </if>
+            <if test="bankName!=null and bankName!=''">
+                or  bank_name=#{bankName}
+            </if>
+            <if test="shortName!=null and shortName!=''">
+                or  short_name=#{shortName}
+            </if>
+            <if test="accountName!=null and accountName!=''">
+                or  account_name=#{accountName}
+            </if>
+            <if test="openBank!=null and openBank!=''">
+                or  open_bank=#{openBank}
+            </if>
+            <if test="type!=null and type!=''">
+                or  type=#{type}
+            </if>
+            <if test="num!=null">
+                or  num=#{num}
+            </if>
+            </trim>
+        </where>
+    </sql>
+
+    <select id="select" parameterType="com.shop.user.dto.BankDto" resultMap="bankResultMap">
+        select * from  t_bank
+        <include refid="whereIf"/>
+    </select>
+
+    <select id="count" parameterType="com.shop.user.dto.BankDto" resultType="java.lang.Long">
+        select count(*) from  t_bank
+        <include refid="whereIf"/>
+    </select>
+
+</mapper>

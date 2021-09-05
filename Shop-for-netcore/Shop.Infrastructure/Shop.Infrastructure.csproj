@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;net48</TargetFrameworks>
+    <RootNamespace>EventCloud</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48' ">
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.EntityFramework\Abp.EntityFramework.csproj" />
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.Zero.EntityFramework\Abp.Zero.EntityFramework.csproj" />
+
+    <!--<ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.Zero.NHibernate\Abp.Zero.NHibernate.csproj" />-->
+
+
+
+    <!--<PackageReference Include="Abp.EntityFramework" Version="6.3.1" />
+    <PackageReference Include="Abp.Zero.EntityFramework" Version="6.3.1" />-->
+     <!--<PackageReference Include="Abp.Zero.NHibernate" Version="6.3.1" />-->
+     <ProjectReference Include="..\Abp.ZeroCore.NHibernate\Abp.ZeroCore.NHibernate.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0' ">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.6">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+
+    <!--<PackageReference Include="Z.EntityFramework.Plus.EFCore" Version="5.1.41" />-->
+
+    <!--<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.6" />-->
+    <!--<PackageReference Include="Z.EntityFramework.Plus.EFCore" Version="5.1.39" />-->
+   
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.EntityFrameworkCore\Abp.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.ZeroCore.EntityFrameworkCore\Abp.ZeroCore.EntityFrameworkCore.csproj" />
+   
+    
+    
+    <!--<PackageReference Include="Abp.EntityFrameworkCore" Version="6.3.1" />
+    <PackageReference Include="Abp.ZeroCore.EntityFrameworkCore" Version="6.3.1" />-->
+    <ProjectReference Include="..\Abp.ZeroCore.NHibernate\Abp.ZeroCore.NHibernate.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Sdk\readme.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Sdk\readme.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.23" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.113.7" />
+   
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.Dapper\Abp.Dapper.csproj" />
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.NHibernate\Abp.NHibernate.csproj" />
+   
+    
+    
+    <!--<PackageReference Include="Abp.Dapper" Version="6.3.1" />
+    <PackageReference Include="Abp.NHibernate" Version="6.3.1" />-->
+    
+    <!--<PackageReference Include="Utility.Nhibernate.Simple" Version="1.0.0" />-->
+    <ProjectReference Include="..\..\..\utility\Utility-for-net\Utility.Ef\Utility.Ef.csproj" />
+    
+    <ProjectReference Include="..\Shop.Core\Shop.Core.csproj" />
+</ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Dapper\" />
+  </ItemGroup>
+
+
+  <Import Project="..\..\..\utility\Utility-for-net\Shared\Utility.NHibernate.Shared\Utility.NHibernate.Shared.projitems" Label="Shared" />
+</Project>

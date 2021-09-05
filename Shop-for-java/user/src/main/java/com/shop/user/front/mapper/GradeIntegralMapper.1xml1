@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sgradeIntegral">
+    <resultMap id="sgradeIntegralResultMap" type="com.shop.user.entity.GradeIntegral">
+        <result property="id" column="id" javaType="long"></result>
+        <result property="sgradeId" column="sgrade_id" javaType="java.lang.Long"></result>
+        <result property="buyIntegral" column="buy_integral" javaType="java.lang.Long"></result>
+    </resultMap>
+
+
+    <insert id="sgradeIntegral.add" parameterType="com.shop.user.entity.GradeIntegral" useGeneratedKeys="true" keyProperty="id">
+        insert into t_sgrade_integral
+        <trim suffixOverrides=",">
+        (
+           <if test="sgradeId!=null">
+               sgrade_id,
+           </if>
+           <if test="buyIntegral!=null">
+               buy_integral,
+           </if>
+        </trim>
+        )
+        values
+        (
+        <trim suffixOverrides=",">
+           <if test="sgradeId!=null">
+               #{sgradeId},
+           </if>
+           <if test="buyIntegral!=null">
+               #{buyIntegral},
+           </if>
+        </trim>
+        )
+        </insert>
+
+    <update id="sgradeIntegral.modify" parameterType="com.shop.user.entity.GradeIntegral" >
+        update  t_sgrade_integral  
+        <trim prefix="set" suffixOverrides=",">
+            <if test="sgradeId!=null">
+               sgrade_id=#{sgradeId},
+            </if>
+            <if test="buyIntegral!=null">
+               buy_integral=#{buyIntegral},
+            </if>
+        </trim>
+         where id =#{id}
+    </update>
+
+    <sql id="deleteSql">delete from  t_sgrade_integral where id </sql>
+
+    <delete id="sgradeIntegral.delete" parameterType="long" >
+        <include refid="deleteSql"  /> =#{id}
+     </delete>
+
+    <delete id="sgradeIntegral.deleteMany" >
+       <include refid="deleteSql"  />  in
+        <foreach collection="ids" index="index" item="item" open="(" separator="," close=")">
+             #{item}
+        </foreach>
+     </delete>
+
+    <sql id="whereIf">
+        <where>
+            <if test="id!=0">
+                or  id=#{id}
+            </if>
+            <if test="sgradeId!=null">
+                or  sgrade_id=#{sgradeId}
+            </if>
+            <if test="buyIntegral!=null">
+                or  buy_integral=#{buyIntegral}
+            </if>
+        </where>
+    </sql>
+
+    <select id="sgradeIntegral.select" parameterType="com.shop.user.entity.GradeIntegral" resultMap="sgradeIntegralResultMap">
+        select * from  t_sgrade_integral
+        <include refid="whereIf"/>
+    </select>
+
+    <select id="sgradeIntegral.count" parameterType="com.shop.user.entity.GradeIntegral" resultType="java.lang.Integer">
+        select count(id) from  t_sgrade_integral
+        <include refid="whereIf"/>
+    </select>
+
+</mapper>

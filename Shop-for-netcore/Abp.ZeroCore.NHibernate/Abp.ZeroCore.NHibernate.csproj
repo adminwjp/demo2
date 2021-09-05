@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;net48</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48' ">
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.Zero\Abp.Zero.csproj" />
+
+    <!--<PackageReference Include="Abp.Zero" Version="6.3.1" />-->
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.3" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0' ">
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.ZeroCore\Abp.ZeroCore.csproj" />
+
+
+    <!--<PackageReference Include="Abp.ZeroCore" Version="6.3.1" />-->
+
+  </ItemGroup>
+  
+  <ItemGroup>
+    <!--<ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.FluentMigrator\Abp.FluentMigrator.csproj" />-->
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.NHibernate\Abp.NHibernate.csproj" />
+
+    
+    <!--<PackageReference Include="Abp.FluentMigrator" Version="6.3.1" />-->
+    <!--<PackageReference Include="Abp.NHibernate" Version="6.3.1" />-->
+    
+  </ItemGroup>
+</Project>

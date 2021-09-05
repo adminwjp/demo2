@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;net48</TargetFrameworks>
+    <RootNamespace>EventCloud</RootNamespace>
+  </PropertyGroup>
+  
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48' ">
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.Zero\Abp.Zero.csproj" />
+
+    <!--<PackageReference Include="Abp.Zero" Version="6.3.1" />-->
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.3" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0' ">
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.ZeroCore\Abp.ZeroCore.csproj" />
+    
+    <!--<PackageReference Include="Abp.ZeroCore" Version="6.3.1" />-->
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\Source\EventCloud-tr.xml">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Localization\Source\EventCloud.xml">
+    </EmbeddedResource>
+  </ItemGroup>
+  
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp\Abp.csproj" />
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.Zero.Common\Abp.Zero.Common.csproj" />
+
+
+
+    <!--<PackageReference Include="Abp" Version="6.3.1" />-->
+
+    <!--<PackageReference Include="Abp.Zero.Common" Version="6.3.1" />-->
+
+    <PackageReference Include="NHibernate.Mapping.Attributes" Version="5.1.0" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <Folder Include="EventCloud\" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+   
+    
+  </ItemGroup>
+
+</Project>

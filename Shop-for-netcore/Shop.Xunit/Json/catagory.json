@@ -1,0 +1,214 @@
+{
+  "data": [
+    {
+      "name": "手机数码",
+      "children": [
+        {
+          "name": "手机通讯",
+          "children": [
+            {
+              "name": "全面屏手机",
+              "picture": "/static/temp/cate2.jpg",
+              "children": []
+            },
+            {
+              "name": "游戏手机",
+              "picture": "/static/temp/cate3.jpg",
+              "children": []
+            },
+            {
+              "name": "老人机",
+              "picture": "/static/temp/cate1.jpg",
+              "children": []
+            },
+            {
+              "name": "拍照手机",
+              "picture": "/static/temp/cate4.jpg",
+              "children": []
+            },
+            {
+              "name": "女性手机",
+              "picture": "/static/temp/cate5.jpg",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "运营商",
+          "children": [
+            {
+              "name": "合约机",
+              "picture": "/static/temp/cate1.jpg",
+              "children": []
+            },
+            {
+              "name": "选好卡",
+              "picture": "/static/temp/cate4.jpg",
+              "children": []
+            },
+            {
+              "name": "办套餐",
+              "picture": "/static/temp/cate5.jpg",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "礼品鲜花",
+      "children": [
+        {
+          "name": "礼品",
+          "children": [
+            {
+              "name": "公益摆件",
+              "picture": "/static/temp/cate7.jpg",
+              "children": []
+            },
+            {
+              "name": "创意礼品",
+              "picture": "/static/temp/cate8.jpg",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "鲜花",
+          "children": [
+            {
+              "name": "鲜花",
+              "picture": "/static/temp/cate9.jpg",
+              "children": []
+            },
+            {
+              "name": "每周一花",
+              "picture": "/static/temp/cate10.jpg",
+              "children": []
+            },
+            {
+              "name": "卡通花束",
+              "picture": "/static/temp/cate11.jpg",
+              "children": []
+            },
+            {
+              "name": "永生花",
+              "picture": "/static/temp/cate12.jpg",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "男装女装",
+      "children": [
+        {
+          "name": "男装",
+          "children": [
+            {
+              "name": "男士T恤",
+              "picture": "/static/temp/cate13.jpg",
+              "children": []
+            },
+            {
+              "name": "男士外套",
+              "picture": "/static/temp/cate14.jpg",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "女装",
+          "children": [
+            {
+              "name": "裙装",
+              "picture": "/static/temp/cate15.jpg",
+              "children": []
+            },
+            {
+              "name": "T恤",
+              "picture": "/static/temp/cate16.jpg",
+              "children": []
+            },
+            {
+              "name": "上装",
+              "picture": "/static/temp/cate15.jpg",
+              "children": []
+            },
+            {
+              "name": "下装",
+              "picture": "/static/temp/cate16.jpg",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "母婴用品",
+      "children": [
+        {
+          "name": "营养辅食",
+          "children": [
+            {
+              "name": "果泥/果汁",
+              "picture": "/static/temp/cate18.jpg",
+              "children": []
+            },
+            {
+              "name": "面条/粥",
+              "picture": "/static/temp/cate20.jpg"
+
+            }
+          ]
+        },
+        {
+          "name": "童装",
+          "children": [
+            {
+              "name": "婴童衣橱",
+              "picture": "/static/temp/cate19.jpg",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "喂养用品",
+          "children": [
+            {
+              "name": "吸奶器",
+              "picture": "/static/temp/cate21.jpg",
+              "children": []
+            },
+            {
+              "name": "儿童餐具",
+              "picture": "/static/temp/cate22.jpg",
+              "children": []
+            },
+            {
+              "name": "牙胶安抚",
+              "picture": "/static/temp/cate23.jpg",
+              "children": []
+            },
+            {
+              "name": "围兜",
+              "picture": "/static/temp/cate24.jpg",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "奶粉",
+          "children": [
+            {
+              "name": "有机奶粉",
+              "picture": "/static/temp/cate17.jpg",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.user.front.mapper.UserMapper">
+    <resultMap id="userResultMap" type="com.shop.user.dto.UserDto">
+        <result property="userid" column="userid" javaType="long"></result>
+        <result property="username" column="username" javaType="java.lang.String"></result>
+        <result property="nickname" column="nickname" javaType="java.lang.String"></result>
+        <result property="email" column="email" javaType="java.lang.String"></result>
+        <result property="account" column="account" javaType="java.lang.String"></result>
+        <result property="password" column="password" javaType="java.lang.String"></result>
+        <result property="passwordResetToken" column="password_reset_token" javaType="java.lang.String"></result>
+        <result property="realName" column="real_name" javaType="java.lang.String"></result>
+        <result property="gender" column="gender" javaType="java.lang.String"></result>
+        <result property="birthday" column="birthday" javaType="java.lang.Long"></result>
+        <result property="phoneTel" column="phone_tel" javaType="java.lang.String"></result>
+        <result property="phoneMob" column="phone_mob" javaType="java.lang.String"></result>
+        <result property="imQq" column="im_qq" javaType="java.lang.String"></result>
+        <result property="imWw" column="im_ww" javaType="java.lang.String"></result>
+        <result property="createTime" column="create_time" javaType="java.lang.Long"></result>
+        <result property="updateTime" column="update_time" javaType="java.lang.Long"></result>
+        <result property="lastLogin" column="last_login" javaType="java.lang.String"></result>
+        <result property="lastIp" column="last_ip" javaType="java.lang.String"></result>
+        <result property="logins" column="logins" javaType="java.lang.String"></result>
+        <result property="ugrade" column="ugrade" javaType="java.lang.String"></result>
+        <result property="portrait" column="portrait" javaType="java.lang.String"></result>
+        <result property="activation" column="activation" javaType="java.lang.String"></result>
+        <result property="locked" column="locked" javaType="java.lang.String"></result>
+        <result property="imforbid" column="imforbid" javaType="java.lang.String"></result>
+        <result property="authKey" column="auth_key" javaType="java.lang.String"></result>
+        <result property="id" column="id" javaType="long"></result>
+        <result property="userid" column="userid" javaType="java.lang.Long"></result>
+        <result property="token" column="token" javaType="java.lang.String"></result>
+        <result property="expireTime" column="expire_time" javaType="long"></result>
+
+        <result property="scene" column="scene" javaType="java.lang.String"></result>
+        <result property="ip" column="ip" javaType="java.lang.String"></result>
+        <result property="address" column="address" javaType="java.lang.String"></result>
+
+
+        <result property="storeId" column="store_id" javaType="java.lang.Long"></result>
+        <result property="privs" column="privs" javaType="java.lang.String"></result>
+
+
+    </resultMap>
+
+    <sql id="user">
+        <if test="userType=='buyer'">
+            t_buyer
+        </if>
+        <if test="userType=='seller'">
+            t_seller
+        </if>
+        <if test="userType=='agent'">
+            t_agent
+        </if>
+        <if test="userType=='manufacturer'">
+            t_manufacturer
+        </if>
+        <if test="userType=='platform'">
+            t_platform
+        </if>
+    </sql>
+
+    <insert id="add" parameterType="com.shop.user.dto.UserDto" >
+        insert into  <include refid="user"/>
+        <trim suffixOverrides=",">
+        (
+           <if test="userid!=0">
+               userid,
+           </if>
+           <if test="username!=null and username!=''">
+               username,
+           </if>
+           <if test="nickname!=null and nickname!=''">
+               nickname,
+           </if>
+           <if test="email!=null and email!=''">
+               email,
+           </if>
+            <if test="account!=null and account!=''">
+                account,
+            </if>
+           <if test="password!=null and password!=''">
+               password,
+           </if>
+           <if test="passwordResetToken!=null and passwordResetToken!=''">
+               password_reset_token,
+           </if>
+           <if test="realName!=null and realName!=''">
+               real_name,
+           </if>
+           <if test="gender!=null and gender!=''">
+               gender,
+           </if>
+            birthday,
+           <if test="phoneTel!=null and phoneTel!=''">
+               phone_tel,
+           </if>
+           <if test="phoneMob!=null and phoneMob!=''">
+               phone_mob,
+           </if>
+           <if test="imQq!=null and imQq!=''">
+               im_qq,
+           </if>
+           <if test="imWw!=null and imWw!=''">
+               im_ww,
+           </if>
+               create_time,
+               update_time,
+           <if test="lastLogin!=null and lastLogin!=''">
+               last_login,
+           </if>
+           <if test="lastIp!=null and lastIp!=''">
+               last_ip,
+           </if>
+           <if test="logins!=null and logins!=''">
+               logins,
+           </if>
+           <if test="ugrade!=null and ugrade!=''">
+               ugrade,
+           </if>
+           <if test="portrait!=null and portrait!=''">
+               portrait,
+           </if>
+           <if test="activation!=null and activation!=''">
+               activation,
+           </if>
+           <if test="locked!=null and locked!=''">
+               locked,
+           </if>
+           <if test="imforbid!=null and imforbid!=''">
+               imforbid,
+           </if>
+           <if test="authKey!=null and authKey!=''">
+               auth_key,
+           </if>
+            <if test="userid!=null">
+                userid,
+            </if>
+            <if test="token!=null and token!=''">
+                token,
+            </if>
+                expire_time,
+            <if test="scene!=null and scene!=''">
+                scene,
+            </if>
+            <if test="ip!=null and ip!=''">
+                ip,
+            </if>
+            <if test="address!=null and address!=''">
+                address,
+            </if>
+
+            <if test="storeId!=null">
+                store_id,
+            </if>
+            <if test="privs!=null and privs!=''">
+                privs,
+            </if>
+        </trim>
+        )
+        values
+        (
+        <trim suffixOverrides=",">
+           <if test="userid!=null">
+               #{userid},
+           </if>
+           <if test="username!=null and username!=''">
+               #{username},
+           </if>
+           <if test="nickname!=null and nickname!=''">
+               #{nickname},
+           </if>
+           <if test="email!=null and email!=''">
+               #{email},
+           </if>
+            <if test="account!=null and account!=''">
+                #{account},
+            </if>
+           <if test="password!=null and password!=''">
+               #{password},
+           </if>
+           <if test="passwordResetToken!=null and passwordResetToken!=''">
+               #{passwordResetToken},
+           </if>
+           <if test="realName!=null and realName!=''">
+               #{realName},
+           </if>
+           <if test="gender!=null and gender!=''">
+               #{gender},
+           </if>
+               #{birthday},
+           <if test="phoneTel!=null and phoneTel!=''">
+               #{phoneTel},
+           </if>
+           <if test="phoneMob!=null and phoneMob!=''">
+               #{phoneMob},
+           </if>
+           <if test="imQq!=null and imQq!=''">
+               #{imQq},
+           </if>
+           <if test="imWw!=null and imWw!=''">
+               #{imWw},
+           </if>
+               #{createTime},
+               #{updateTime},
+           <if test="lastLogin!=null and lastLogin!=''">
+               #{lastLogin},
+           </if>
+           <if test="lastIp!=null and lastIp!=''">
+               #{lastIp},
+           </if>
+           <if test="logins!=null and logins!=''">
+               #{logins},
+           </if>
+           <if test="ugrade!=null and ugrade!=''">
+               #{ugrade},
+           </if>
+           <if test="portrait!=null and portrait!=''">
+               #{portrait},
+           </if>
+           <if test="activation!=null and activation!=''">
+               #{activation},
+           </if>
+           <if test="locked!=null and locked!=''">
+               #{locked},
+           </if>
+           <if test="imforbid!=null and imforbid!=''">
+               #{imforbid},
+           </if>
+           <if test="authKey!=null and authKey!=''">
+               #{authKey},
+           </if>
+            <if test="userid!=null">
+                #{userid},
+            </if>
+            <if test="token!=null and token!=''">
+                #{token},
+            </if>
+                #{expireTime},
+
+            <if test="scene!=null and scene!=''">
+                #{scene},
+            </if>
+            <if test="ip!=null and ip!=''">
+                #{ip},
+            </if>
+            <if test="address!=null and address!=''">
+                #{address},
+            </if>
+
+            <if test="storeId!=null">
+                #{storeId},
+            </if>
+            <if test="privs!=null and privs!=''">
+                #{privs},
+            </if>
+        </trim>
+        )
+        </insert>
+
+    <update id="modify" parameterType="com.shop.user.dto.UserDto" >
+        update   <include refid="user"/>
+        <trim prefix="set" suffixOverrides=",">
+            <if test="userid!=null">
+               userid=#{userid},
+            </if>
+            <if test="username!=null and username!=''">
+               username=#{username},
+            </if>
+            <if test="nickname!=null and nickname!=''">
+               nickname=#{nickname},
+            </if>
+            <if test="email!=null and email!=''">
+               email=#{email},
+            </if>
+            <if test="account!=null and account!=''">
+                account=#{account},
+            </if>
+            <if test="password!=null and password!=''">
+               password=#{password},
+            </if>
+            <if test="passwordResetToken!=null and passwordResetToken!=''">
+               password_reset_token=#{passwordResetToken},
+            </if>
+            <if test="realName!=null and realName!=''">
+               real_name=#{realName},
+            </if>
+            <if test="gender!=null and gender!=''">
+               gender=#{gender},
+            </if>
+            <if test="birthday>0">
+               birthday=#{birthday},
+            </if>
+            <if test="phoneTel!=null and phoneTel!=''">
+               phone_tel=#{phoneTel},
+            </if>
+            <if test="phoneMob!=null and phoneMob!=''">
+               phone_mob=#{phoneMob},
+            </if>
+            <if test="imQq!=null and imQq!=''">
+               im_qq=#{imQq},
+            </if>
+            <if test="imWw!=null and imWw!=''">
+               im_ww=#{imWw},
+            </if>
+
+            <if test="updateTime>0">
+               update_time=#{updateTime},
+            </if>
+            <if test="lastLogin!=null and lastLogin!=''">
+               last_login=#{lastLogin},
+            </if>
+            <if test="lastIp!=null and lastIp!=''">
+               last_ip=#{lastIp},
+            </if>
+            <if test="logins!=null and logins!=''">
+               logins=#{logins},
+            </if>
+            <if test="ugrade!=null and ugrade!=''">
+               ugrade=#{ugrade},
+            </if>
+            <if test="portrait!=null and portrait!=''">
+               portrait=#{portrait},
+            </if>
+            <if test="activation!=null and activation!=''">
+               activation=#{activation},
+            </if>
+            <if test="locked!=null and locked!=''">
+               locked=#{locked},
+            </if>
+            <if test="imforbid!=null and imforbid!=''">
+               imforbid=#{imforbid},
+            </if>
+            <if test="authKey!=null and authKey!=''">
+               auth_key=#{authKey},
+            </if>
+            <if test="userid!=null">
+                userid=#{userid},
+            </if>
+            <if test="token!=null and token!=''">
+                token=#{token},
+            </if>
+            <if test="expireTime>0">
+                expire_time=#{expireTime},
+            </if>
+
+            <if test="scene!=null and scene!=''">
+                scene=#{scene},
+            </if>
+            <if test="ip!=null and ip!=''">
+                ip=#{ip},
+            </if>
+            <if test="address!=null and address!=''">
+                address=#{address},
+            </if>
+
+
+            <if test="storeId!=null">
+                store_id=#{storeId},
+            </if>
+            <if test="privs!=null and privs!=''">
+                privs=#{privs},
+            </if>
+        </trim>
+    </update>
+
+    <sql id="whereIfAnd">
+        <where>
+            <trim  prefixOverrides="and">
+                <if test="userid!=null">
+                    and  userid=#{userid}
+                </if>
+                <if test="username!=null and username!=''">
+                    and  username=#{username}
+                </if>
+                <if test="nickname!=null and nickname!=''">
+                    and  nickname=#{nickname}
+                </if>
+                <if test="email!=null and email!=''">
+                    and  email=#{email}
+                </if>
+                <if test="account!=null and account!=''">
+                    and  account=#{account}
+                </if>
+                <if test="password!=null and password!=''">
+                    and  password=#{password}
+                </if>
+                <if test="passwordResetToken!=null and passwordResetToken!=''">
+                    and  password_reset_token=#{passwordResetToken}
+                </if>
+                <if test="realName!=null and realName!=''">
+                    and  real_name=#{realName}
+                </if>
+                <if test="gender!=null and gender!=''">
+                    and  gender=#{gender}
+                </if>
+                <if test="phoneTel!=null and phoneTel!=''">
+                    and  phone_tel=#{phoneTel}
+                </if>
+                <if test="phoneMob!=null and phoneMob!=''">
+                    and  phone_mob=#{phoneMob}
+                </if>
+                <if test="imQq!=null and imQq!=''">
+                    and  im_qq=#{imQq}
+                </if>
+                <if test="imWw!=null and imWw!=''">
+                    and  im_ww=#{imWw}
+                </if>
+
+                <if test="lastLogin!=null and lastLogin!=''">
+                    and  last_login=#{lastLogin}
+                </if>
+                <if test="lastIp!=null and lastIp!=''">
+                    and  last_ip=#{lastIp}
+                </if>
+                <if test="logins!=null and logins!=''">
+                    and  logins=#{logins}
+                </if>
+                <if test="ugrade!=null and ugrade!=''">
+                    and  ugrade=#{ugrade}
+                </if>
+                <if test="portrait!=null and portrait!=''">
+                    and  portrait=#{portrait}
+                </if>
+                <if test="activation!=null and activation!=''">
+                    or  activation=#{activation}
+                </if>
+                <if test="locked!=null and locked!=''">
+                    and  locked=#{locked}
+                </if>
+                <if test="imforbid!=null and imforbid!=''">
+                    and  imforbid=#{imforbid}
+                </if>
+                <if test="authKey!=null and authKey!=''">
+                    and  auth_key=#{authKey}
+                </if>
+
+                <if test="scene!=null and scene!=''">
+                    and  scene=#{scene}
+                </if>
+                <if test="ip!=null and ip!=''">
+                    and  ip=#{ip}
+                </if>
+                <if test="address!=null and address!=''">
+                    and  address=#{address}
+                </if>
+
+                <if test="storeId!=null">
+                    and  store_id=#{storeId}
+                </if>
+                <if test="privs!=null and privs!=''">
+                    and  privs=#{privs}
+                </if>
+            </trim>
+        </where>
+    </sql>
+    <sql id="whereIf">
+        <where>
+            <trim  prefixOverrides="or">
+            <if test="userid!=null">
+                or  userid=#{userid}
+            </if>
+            <if test="username!=null and username!=''">
+                or  username=#{username}
+            </if>
+            <if test="nickname!=null and nickname!=''">
+                or  nickname=#{nickname}
+            </if>
+            <if test="email!=null and email!=''">
+                or  email=#{email}
+            </if>
+            <if test="account!=null and account!=''">
+                or  account=#{account}
+            </if>
+            <if test="password!=null and password!=''">
+                or  password=#{password}
+            </if>
+            <if test="passwordResetToken!=null and passwordResetToken!=''">
+                or  password_reset_token=#{passwordResetToken}
+            </if>
+            <if test="realName!=null and realName!=''">
+                or  real_name=#{realName}
+            </if>
+            <if test="gender!=null and gender!=''">
+                or  gender=#{gender}
+            </if>
+            <if test="phoneTel!=null and phoneTel!=''">
+                or  phone_tel=#{phoneTel}
+            </if>
+            <if test="phoneMob!=null and phoneMob!=''">
+                or  phone_mob=#{phoneMob}
+            </if>
+            <if test="imQq!=null and imQq!=''">
+                or  im_qq=#{imQq}
+            </if>
+            <if test="imWw!=null and imWw!=''">
+                or  im_ww=#{imWw}
+            </if>
+
+            <if test="lastLogin!=null and lastLogin!=''">
+                or  last_login=#{lastLogin}
+            </if>
+            <if test="lastIp!=null and lastIp!=''">
+                or  last_ip=#{lastIp}
+            </if>
+            <if test="logins!=null and logins!=''">
+                or  logins=#{logins}
+            </if>
+            <if test="ugrade!=null and ugrade!=''">
+                or  ugrade=#{ugrade}
+            </if>
+            <if test="portrait!=null and portrait!=''">
+                or  portrait=#{portrait}
+            </if>
+            <if test="activation!=null and activation!=''">
+                or  activation=#{activation}
+            </if>
+            <if test="locked!=null and locked!=''">
+                or  locked=#{locked}
+            </if>
+            <if test="imforbid!=null and imforbid!=''">
+                or  imforbid=#{imforbid}
+            </if>
+            <if test="authKey!=null and authKey!=''">
+                or  auth_key=#{authKey}
+            </if>
+
+            <if test="scene!=null and scene!=''">
+                or  scene=#{scene}
+            </if>
+            <if test="ip!=null and ip!=''">
+                or  ip=#{ip}
+            </if>
+            <if test="address!=null and address!=''">
+                or  address=#{address}
+            </if>
+
+            <if test="storeId!=null">
+                or  store_id=#{storeId}
+            </if>
+            <if test="privs!=null and privs!=''">
+                or  privs=#{privs}
+            </if>
+            </trim>
+        </where>
+    </sql>
+
+    <select id="query" parameterType="com.shop.user.dto.UserDto" resultMap="userResultMap">
+        select * from   <include refid="user"/>
+        <include refid="whereIfAnd"/>
+    </select>
+    <select id="select" parameterType="com.shop.user.dto.UserDto" resultMap="userResultMap">
+        select * from   <include refid="user"/>
+        <include refid="whereIf"/>
+    </select>
+
+    <select id="count" parameterType="com.shop.user.dto.UserDto" resultType="java.lang.Long">
+        select count(*) from   <include refid="user"/>
+        <include refid="whereIf"/>
+    </select>
+
+
+    <select id="queryCount" parameterType="com.shop.user.dto.UserDto" resultType="java.lang.Long">
+        select count(*) from   <include refid="user"/>
+        <include refid="whereIfAnd"/>
+    </select>
+</mapper>

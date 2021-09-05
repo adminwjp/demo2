@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>f596cf90-6fd5-405e-802e-e38dec50431a</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <!-- 
+	<StartupFile>runserver.py</StartupFile> 
+	<StartupFile>test/shop_for_flask_test.py</StartupFile>
+	-->
+    <StartupFile>runserver.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>shop_for_flask</Name>
+    <RootNamespace>shop_for_flask</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="config\readconfig.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="migrate.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="shop_for_flask\base_restfuls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="shop_for_flask\comment_model.py" />
+    <Compile Include="shop_for_flask\common.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="shop_for_flask\order_model.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="shop_for_flask\order_restfuls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="shop_for_flask\product_model.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="shop_for_flask\product_restfuls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="shop_for_flask\session.py" />
+    <Compile Include="shop_for_flask\comment_restfuls.py" />
+    <Compile Include="shop_for_flask\database.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="shop_for_flask\model.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="shop_for_flask\restfuls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runserver.py" />
+    <Compile Include="shop_for_flask\shop_views.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="shop_for_flask\upload_restfuls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="shop_for_flask\__init__.py" />
+    <Compile Include="shop_for_flask\views.py" />
+    <Compile Include="test\shop_for_flask_test.py" />
+    <Compile Include="util\ex.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="util\jwt_util.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="config\" />
+    <Folder Include="shop_for_flask\" />
+    <Folder Include="shop_for_flask\static\" />
+    <Folder Include="shop_for_flask\static\content\" />
+    <Folder Include="shop_for_flask\static\fonts\" />
+    <Folder Include="shop_for_flask\static\scripts\" />
+    <Folder Include="shop_for_flask\templates\" />
+    <Folder Include="shop_for_flask\templates\admin\" />
+    <Folder Include="test\" />
+    <Folder Include="util\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\config.ini" />
+    <Content Include="config\data.json" />
+    <Content Include="shop_for_flask\static\favicon.ico" />
+    <Content Include="shop_for_flask\templates\admin\address.html" />
+    <Content Include="readme.md" />
+    <Content Include="requirements.txt" />
+    <Content Include="shop_for_flask\static\content\bootstrap.css" />
+    <Content Include="shop_for_flask\static\content\bootstrap.min.css" />
+    <Content Include="shop_for_flask\static\content\site.css" />
+    <Content Include="shop_for_flask\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="shop_for_flask\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="shop_for_flask\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="shop_for_flask\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="shop_for_flask\static\scripts\bootstrap.js" />
+    <Content Include="shop_for_flask\static\scripts\bootstrap.min.js" />
+    <Content Include="shop_for_flask\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="shop_for_flask\static\scripts\jquery-1.10.2.js" />
+    <Content Include="shop_for_flask\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="shop_for_flask\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="shop_for_flask\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="shop_for_flask\static\scripts\jquery.validate.js" />
+    <Content Include="shop_for_flask\static\scripts\jquery.validate.min.js" />
+    <Content Include="shop_for_flask\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="shop_for_flask\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="shop_for_flask\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="shop_for_flask\static\scripts\respond.js" />
+    <Content Include="shop_for_flask\static\scripts\respond.min.js" />
+    <Content Include="shop_for_flask\static\scripts\_references.js" />
+    <Content Include="shop_for_flask\templates\about.html" />
+    <Content Include="shop_for_flask\templates\admin\carousel.html" />
+    <Content Include="shop_for_flask\templates\admin\cart.html" />
+    <Content Include="shop_for_flask\templates\admin\category.html" />
+    <Content Include="shop_for_flask\templates\admin\easyui_index.html" />
+    <Content Include="shop_for_flask\templates\admin\product.html" />
+    <Content Include="shop_for_flask\templates\admin\user.html" />
+    <Content Include="shop_for_flask\templates\contact.html" />
+    <Content Include="shop_for_flask\templates\index.html" />
+    <Content Include="shop_for_flask\templates\layout.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

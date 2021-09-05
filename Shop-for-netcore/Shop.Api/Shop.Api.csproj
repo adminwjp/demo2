@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <!--<UserSecretsId>adc4b37c-adfe-4896-8ad0-bd8d70e5bc55</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>-->
+  </PropertyGroup>
+
+  <ItemGroup>
+       <!--<Compile Include="..\..\..\utility\Utility-for-net\Example\Example.Web\Product\Manager\*.cs" />
+    <Compile Include="..\..\..\utility\Utility-for-net\Example\Example.Web\TakeOutFoot\Controllers\*.cs" />-->
+    
+       <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.6" />
+       <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.13" />
+       <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+       <!--<ProjectReference Include="..\..\..\utility\Utility-for-net\Utility.AspNet.Simple\Utility.AspNet.Simple.csproj" />-->
+       <ProjectReference Include="..\Shop.Application\Shop.Application.csproj" />
+      <!--<Reference Include="Utility.Simple">
+        <HintPath>..\Lib\Utility.Simple.dll</HintPath>
+      </Reference>-->
+     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+
+     
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+     <PackageReference Include="Abp.AspNetCore" Version="6.3.1" />
+  </ItemGroup>
+
+</Project>

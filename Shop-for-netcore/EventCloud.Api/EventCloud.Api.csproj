@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;net48</TargetFrameworks>
+    <RootNamespace>EventCloud</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48' ">
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.Web.Api\Abp.Web.Api.csproj" />
+    
+    <!--<PackageReference Include="Abp.Web.Api" Version="6.3.1" />-->
+    <PackageReference Include="Microsoft.Owin.Security.OAuth" Version="4.1.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Owin" Version="5.2.3" />
+    <!--<PackageReference Include="Abp.Zero" Version="6.4" />-->
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0' ">
+    <ProjectReference Include="..\..\..\git\aspnetboilerplate\src\Abp.AspNetCore\Abp.AspNetCore.csproj" />
+    
+    <!--<PackageReference Include="Abp.AspNetCore" Version="6.3.1" />-->
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer">
+      <Version>5.0.3</Version>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+  
+
+    <ProjectReference Include="..\Shop.Application\Shop.Application.csproj" />
+  </ItemGroup>
+
+
+</Project>

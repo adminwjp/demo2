@@ -1,0 +1,561 @@
+[
+  {
+    "Flag": "Config.AuditInRole",
+    "Title": "QueryAuditInRoleOutput",
+    "Data": [
+      {
+        "Lists": [
+          {
+            "Flag": 0,
+            "Title": "QueryAuditInRoleOutput",
+            "Width": 500,
+            "Height": 500,
+            "Columns": [
+              {
+                "Name": "Id",
+                "Header": "Id",
+                "ColumnType": 1
+              },
+              {
+                "Name": "RoleId",
+                "Header": "RoleId",
+                "ColumnType": 1
+              },
+              {
+                "Name": "ItemKey",
+                "Header": "ItemKey",
+                "ColumnType": 1
+              },
+              {
+                "Name": "StrictDegree",
+                "Header": "StrictDegree",
+                "ColumnType": 1
+              },
+              {
+                "Name": "IsLocked",
+                "Header": "IsLocked",
+                "ColumnType": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+ 
+  {
+    "Flag": "Config.BuyerFullReduction",
+    "Title": "QueryBuyerFullReductionOutput",
+    "Data": [
+      {
+        "Lists": [
+          {
+            "Flag": 0,
+            "Title": "QueryBuyerFullReductionOutput",
+            "Width": 500,
+            "Height": 450,
+            "Columns": [
+              {
+                "Name": "Id",
+                "Header": "Id",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Total",
+                "Header": "Total",
+                "ColumnType": 1
+              },
+              {
+                "Name": "CouponFee",
+                "Header": "CouponFee",
+                "ColumnType": 1
+              },
+              {
+                "Name": "UserId",
+                "Header": "UserId",
+                "ColumnType": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Flag": "Config.BuyerIntegral",
+    "Title": "QueryBuyerIntegralOutput",
+    "Data": [
+      {
+        "Lists": [
+          {
+            "Flag": 0,
+            "Title": "QueryBuyerIntegralOutput",
+            "Width": 500,
+            "Height": 400,
+            "Columns": [
+              {
+                "Name": "Id",
+                "Header": "Id",
+                "ColumnType": 1
+              },
+              {
+                "Name": "SingnId",
+                "Header": "SingnId",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Score",
+                "Header": "Score",
+                "ColumnType": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Flag": "Config.BuyerPrizeLog",
+    "Title": "QueryBuyerPrizeLogOutput",
+    "Data": [
+      {
+        "Lists": [
+          {
+            "Flag": 0,
+            "Title": "QueryBuyerPrizeLogOutput",
+            "Width": 500,
+            "Height": 450,
+            "Columns": [
+              {
+                "Name": "Id",
+                "Header": "Id",
+                "ColumnType": 1
+              },
+              {
+                "Name": "SellerIntegralSettingId",
+                "Header": "SellerIntegralSettingId",
+                "ColumnType": 1
+              },
+              {
+                "Name": "CosIntegral",
+                "Header": "CosIntegral",
+                "ColumnType": 1
+              },
+              {
+                "Name": "UserId",
+                "Header": "UserId",
+                "ColumnType": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "Flag": "Config.ProductMsg",
+    "Title": "QueryProductMsgOutput",
+    "Data": [
+      {
+        "Lists": [
+          {
+            "Flag": 0,
+            "Title": "QueryProductMsgOutput",
+            "Width": 500,
+            "Height": 700,
+            "Columns": [
+              {
+                "Name": "Id",
+                "Header": "Id",
+                "ColumnType": 1
+              },
+              {
+                "Name": "ProductIds",
+                "Header": "ProductIds",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Title",
+                "Header": "Title",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Msg",
+                "Header": "Msg",
+                "ColumnType": 1
+              },
+              {
+                "Name": "StartDate",
+                "Header": "StartDate",
+                "ColumnType": 1
+              },
+              {
+                "Name": "EndDate",
+                "Header": "EndDate",
+                "ColumnType": 1
+              },
+              {
+                "Name": "End",
+                "Header": "End",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Pic",
+                "Header": "Pic",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Times",
+                "Header": "Times",
+                "ColumnType": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+ 
+  {
+    "Flag": "Config.SellerCoupon",
+    "Title": "QuerySellerCouponOutput",
+    "Data": [
+      {
+        "Lists": [
+          {
+            "Flag": 0,
+            "Title": "QuerySellerCouponOutput",
+            "Width": 500,
+            "Height": 450,
+            "Columns": [
+              {
+                "Name": "Id",
+                "Header": "Id",
+                "ColumnType": 1
+              },
+              {
+                "Name": "ProductIds",
+                "Header": "ProductIds",
+                "ColumnType": 1
+              },
+              {
+                "Name": "CatagoryIds",
+                "Header": "CatagoryIds",
+                "ColumnType": 1
+              },
+              {
+                "Name": "UserId",
+                "Header": "UserId",
+                "ColumnType": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Flag": "Config.SellerCouponSettsing",
+    "Title": "QuerySellerCouponSettsingOutput",
+    "Data": [
+      {
+        "Lists": [
+          {
+            "Flag": 0,
+            "Title": "QuerySellerCouponSettsingOutput",
+            "Width": 500,
+            "Height": 500,
+            "Columns": [
+              {
+                "Name": "Id",
+                "Header": "Id",
+                "ColumnType": 1
+              },
+              {
+                "Name": "CosFee",
+                "Header": "CosFee",
+                "ColumnType": 1
+              },
+              {
+                "Name": "CouponFee",
+                "Header": "CouponFee",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Flag",
+                "Header": "Flag",
+                "ColumnType": 1
+              },
+              {
+                "Name": "UserId",
+                "Header": "UserId",
+                "ColumnType": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+ 
+  {
+    "Flag": "Config.SellerIntegralSetting",
+    "Title": "QuerySellerIntegralSettingOutput",
+    "Data": [
+      {
+        "Lists": [
+          {
+            "Flag": 0,
+            "Title": "QuerySellerIntegralSettingOutput",
+            "Width": 500,
+            "Height": 500,
+            "Columns": [
+              {
+                "Name": "Id",
+                "Header": "Id",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Flag",
+                "Header": "Flag",
+                "ColumnType": 1
+              },
+              {
+                "Name": "StartDate",
+                "Header": "StartDate",
+                "ColumnType": 1
+              },
+              {
+                "Name": "EndDate",
+                "Header": "EndDate",
+                "ColumnType": 1
+              },
+              {
+                "Name": "CosIntegral",
+                "Header": "CosIntegral",
+                "ColumnType": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Flag": "Config.SellerPrize",
+    "Title": "QuerySellerPrizeOutput",
+    "Data": [
+      {
+        "Lists": [
+          {
+            "Flag": 0,
+            "Title": "QuerySellerPrizeOutput",
+            "Width": 500,
+            "Height": 550,
+            "Columns": [
+              {
+                "Name": "Id",
+                "Header": "Id",
+                "ColumnType": 1
+              },
+              {
+                "Name": "StartDate",
+                "Header": "StartDate",
+                "ColumnType": 1
+              },
+              {
+                "Name": "EndDate",
+                "Header": "EndDate",
+                "ColumnType": 1
+              },
+              {
+                "Name": "CosIntegral",
+                "Header": "CosIntegral",
+                "ColumnType": 1
+              },
+              {
+                "Name": "UserId",
+                "Header": "UserId",
+                "ColumnType": 1
+              },
+              {
+                "Name": "SellerPrizeSettingId",
+                "Header": "SellerPrizeSettingId",
+                "ColumnType": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Flag": "Config.SellerPrizeSetting",
+    "Title": "QuerySellerPrizeSettingOutput",
+    "Data": [
+      {
+        "Lists": [
+          {
+            "Flag": 0,
+            "Title": "QuerySellerPrizeSettingOutput",
+            "Width": 500,
+            "Height": 400,
+            "Columns": [
+              {
+                "Name": "Id",
+                "Header": "Id",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Name",
+                "Header": "Name",
+                "ColumnType": 1
+              },
+              {
+                "Name": "UserId",
+                "Header": "UserId",
+                "ColumnType": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Flag": "Config.Sms",
+    "Title": "QuerySmsOutput",
+    "Data": [
+      {
+        "Lists": [
+          {
+            "Flag": 0,
+            "Title": "QuerySmsOutput",
+            "Width": 500,
+            "Height": 400,
+            "Columns": [
+              {
+                "Name": "Id",
+                "Header": "Id",
+                "ColumnType": 1
+              },
+              {
+                "Name": "AppId",
+                "Header": "AppId",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Secrt",
+                "Header": "Secrt",
+                "ColumnType": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Flag": "Config.Class",
+    "Title": "QueryClassOutput",
+    "Data": [
+      {
+        "Lists": [
+          {
+            "Flag": 0,
+            "Title": "QueryClassOutput",
+            "Width": 500,
+            "Height": 400,
+            "Columns": [
+              {
+                "Name": "Id",
+                "Header": "Id",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Name",
+                "Header": "Name",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Students",
+                "Header": "Students",
+                "ColumnType": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+ 
+  {
+    "Flag": "Config.Student",
+    "Title": "QueryStudentOutput",
+    "Data": [
+      {
+        "Lists": [
+          {
+            "Flag": 0,
+            "Title": "QueryStudentOutput",
+            "Width": 500,
+            "Height": 750,
+            "Columns": [
+              {
+                "Name": "Id",
+                "Header": "Id",
+                "ColumnType": 1
+              },
+              {
+                "Name": "StudentId",
+                "Header": "StudentId",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Name",
+                "Header": "Name",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Age",
+                "Header": "Age",
+                "ColumnType": 1
+              },
+              {
+                "Name": "Sex",
+                "Header": "Sex",
+                "ColumnType": 1
+              },
+              {
+                "Name": "ClassId",
+                "Header": "ClassId",
+                "ColumnType": 1
+              },
+              {
+                "Name": "CreationTime",
+                "Header": "CreationTime",
+                "ColumnType": 1
+              },
+              {
+                "Name": "LastModificationTime",
+                "Header": "LastModificationTime",
+                "ColumnType": 1
+              },
+              {
+                "Name": "DeletionTime",
+                "Header": "DeletionTime",
+                "ColumnType": 1
+              },
+              {
+                "Name": "IsDeleted",
+                "Header": "IsDeleted",
+                "ColumnType": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

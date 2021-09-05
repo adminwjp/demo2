@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.shop.user.entity">
+    <class name="com.shop.user.entity.Grade" table="t_grade" >
+        <id name="gradeId" column="grade_id" unsaved-value="0"> <generator class="identity" /></id>
+        <property name="gradeName" column="grade_name" type="java.lang.String" ></property>
+        <property name="goodsLimit" column="goods_limit" type="int" ></property>
+        <property name="spaceLimit" column="space_limit" type="int" ></property>
+        <property name="charge" column="charge" type="java.lang.String" ></property>
+        <property name="needConfirm" column="need_confirm" type="boolean" ></property>
+        <property name="description" column="description" type="java.lang.String" ></property>
+        <property name="skins" column="skins" type="java.lang.String" ></property>
+        <property name="wapSkins" column="wap_skins" type="java.lang.String" ></property>
+        <property name="sortOrder" column="sort_order" type="int" ></property>
+    </class>
+</hibernate-mapping>

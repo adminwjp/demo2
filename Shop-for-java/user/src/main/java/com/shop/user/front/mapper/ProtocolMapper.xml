@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.user.front.mapper.ProtocolMapper">
+    <resultMap id="protocolResultMap" type="com.shop.user.entity.Protocol">
+        <result property="protocolId" column="protocol_id" javaType="long"></result>
+        <result property="title" column="title" javaType="java.lang.String"></result>
+        <result property="cateId" column="cate_id" javaType="java.lang.Long"></result>
+        <result property="storeId" column="store_id" javaType="java.lang.Long"></result>
+        <result property="link" column="link" javaType="java.lang.String"></result>
+        <result property="description" column="description" javaType="java.lang.String"></result>
+        <result property="sortOrder" column="sort_order" javaType="int"></result>
+        <result property="ifShow" column="if_show" javaType="boolean"></result>
+        <result property="addTime" column="add_time" javaType="java.lang.Long"></result>
+    </resultMap>
+    <resultMap id="protocolDtoResultMap" type="com.shop.user.dto.ProtocolDto">
+        <result property="title" column="title" javaType="java.lang.String"></result>
+       <result property="description" column="description" javaType="java.lang.String"></result>
+
+    </resultMap>
+
+
+    <insert id="add" parameterType="com.shop.user.entity.Protocol" >
+        insert into t_protocol
+        <trim suffixOverrides=",">
+        (
+           <if test="protocolId!=null">
+               protocol_id,
+           </if>
+           <if test="title!=null and title!=''">
+               title,
+           </if>
+           <if test="cateId!=null">
+               cate_id,
+           </if>
+           <if test="storeId!=null">
+               store_id,
+           </if>
+           <if test="link!=null and link!=''">
+               link,
+           </if>
+           <if test="description!=null and description!=''">
+               description,
+           </if>
+           <if test="sortOrder!=0">
+               sort_order,
+           </if>
+           <if test="ifShow!=null and ifShow!=''">
+               if_show,
+           </if>
+           <if test="addTime!=null and addTime!=''">
+               add_time,
+           </if>
+        </trim>
+        )
+        values
+        (
+        <trim suffixOverrides=",">
+           <if test="protocolId!=null">
+               #{protocolId},
+           </if>
+           <if test="title!=null and title!=''">
+               #{title},
+           </if>
+           <if test="cateId!=null">
+               #{cateId},
+           </if>
+           <if test="storeId!=null">
+               #{storeId},
+           </if>
+           <if test="link!=null and link!=''">
+               #{link},
+           </if>
+           <if test="description!=null and description!=''">
+               #{description},
+           </if>
+           <if test="sortOrder!=0">
+               #{sortOrder},
+           </if>
+           <if test="ifShow!=null and ifShow!=''">
+               #{ifShow},
+           </if>
+           <if test="addTime!=null and addTime!=''">
+               #{addTime},
+           </if>
+        </trim>
+        )
+        </insert>
+
+    <update id="modify" parameterType="com.shop.user.entity.Protocol" >
+        update  t_protocol
+        <trim prefix="set" suffixOverrides=",">
+
+            <if test="title!=null and title!=''">
+               title=#{title},
+            </if>
+            <if test="cateId!=null">
+               cate_id=#{cateId},
+            </if>
+            <if test="storeId!=null">
+               store_id=#{storeId},
+            </if>
+            <if test="link!=null and link!=''">
+               link=#{link},
+            </if>
+            <if test="description!=null and description!=''">
+               description=#{description},
+            </if>
+            <if test="sortOrder!=0">
+               sort_order=#{sortOrder},
+            </if>
+            <if test="ifShow!=null and ifShow!=''">
+               if_show=#{ifShow},
+            </if>
+            <if test="addTime!=null and addTime!=''">
+               add_time=#{addTime},
+            </if>
+        </trim>
+        <if test="protocolId!=null">
+           where  protocol_id=#{protocolId},
+        </if>
+    </update>
+
+    <sql id="whereIf">
+        <where>
+            <if test=" protocolId!=null">
+                or   protocol_id=#{protocolId}
+            </if>
+            <if test="title!=null and title!=''">
+                or  title=#{title}
+            </if>
+            <if test="cateId!=null">
+                or  cate_id=#{cateId}
+            </if>
+            <if test="storeId!=null">
+                or  store_id=#{storeId}
+            </if>
+            <if test="link!=null and link!=''">
+                or  link=#{link}
+            </if>
+            <if test="description!=null and description!=''">
+                or  description=#{description}
+            </if>
+            <if test="sortOrder!=0">
+                or  sort_order=#{sortOrder}
+            </if>
+            <if test="ifShow!=null and ifShow!=''">
+                or  if_show=#{ifShow}
+            </if>
+            <if test="addTime>0">
+                or  add_time=#{addTime}
+            </if>
+        </where>
+    </sql>
+
+    <select id="select" parameterType="com.shop.user.entity.Protocol" resultMap="protocolResultMap">
+        select * from  t_protocol
+        <include refid="whereIf"/>
+    </select>
+
+    <select id="count" parameterType="com.shop.user.entity.Protocol" resultType="java.lang.Integer">
+        select count(*) from  t_protocol
+        <include refid="whereIf"/>
+    </select>
+    <select id="getProtocols"  resultMap="protocolDtoResultMap">
+        select title,description from  t_ protocol
+    </select>
+</mapper>

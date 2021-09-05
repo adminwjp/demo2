@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.user.front.mapper.GradeMapper">
+    <resultMap id="gradeResultMap" type="com.shop.user.entity.Grade">
+        <result property="gradeId" column="grade_id" javaType="long"></result>
+        <result property="gradeName" column="grade_name" javaType="java.lang.String"></result>
+        <result property="goodsLimit" column="goods_limit" javaType="int"></result>
+        <result property="spaceLimit" column="space_limit" javaType="int"></result>
+        <result property="charge" column="charge" javaType="java.lang.String"></result>
+        <result property="needConfirm" column="need_confirm" javaType="boolean"></result>
+        <result property="description" column="description" javaType="java.lang.String"></result>
+        <result property="skins" column="skins" javaType="java.lang.String"></result>
+        <result property="wapSkins" column="wap_skins" javaType="java.lang.String"></result>
+        <result property="sortOrder" column="sort_order" javaType="int"></result>
+    </resultMap>
+
+
+    <insert id="add" parameterType="com.shop.user.entity.Grade" >
+        insert into t_grade
+        <trim suffixOverrides=",">
+        (
+           <if test="gradeId!=null">
+               grade_id,
+           </if>
+           <if test="gradeName!=null and gradeName!=''">
+               grade_name,
+           </if>
+           <if test="goodsLimit!=0">
+               goods_limit,
+           </if>
+           <if test="spaceLimit!=0">
+               space_limit,
+           </if>
+           <if test="charge!=null and charge!=''">
+               charge,
+           </if>
+           <if test="needConfirm!=null and needConfirm!=''">
+               need_confirm,
+           </if>
+           <if test="description!=null and description!=''">
+               description,
+           </if>
+           <if test="skins!=null and skins!=''">
+               skins,
+           </if>
+           <if test="wapSkins!=null and wapSkins!=''">
+               wap_skins,
+           </if>
+           <if test="sortOrder!=0">
+               sort_order,
+           </if>
+        </trim>
+        )
+        values
+        (
+        <trim suffixOverrides=",">
+           <if test="gradeId!=null">
+               #{gradeId},
+           </if>
+           <if test="gradeName!=null and gradeName!=''">
+               #{gradeName},
+           </if>
+           <if test="goodsLimit!=0">
+               #{goodsLimit},
+           </if>
+           <if test="spaceLimit!=0">
+               #{spaceLimit},
+           </if>
+           <if test="charge!=null and charge!=''">
+               #{charge},
+           </if>
+           <if test="needConfirm!=null and needConfirm!=''">
+               #{needConfirm},
+           </if>
+           <if test="description!=null and description!=''">
+               #{description},
+           </if>
+           <if test="skins!=null and skins!=''">
+               #{skins},
+           </if>
+           <if test="wapSkins!=null and wapSkins!=''">
+               #{wapSkins},
+           </if>
+           <if test="sortOrder!=0">
+               #{sortOrder},
+           </if>
+        </trim>
+        )
+        </insert>
+
+    <update id="modify" parameterType="com.shop.user.entity.Grade" >
+        update  t_grade
+        <trim prefix="set" suffixOverrides=",">
+            <if test="gradeId!=null">
+               grade_id=#{gradeId},
+            </if>
+            <if test="gradeName!=null and gradeName!=''">
+               grade_name=#{gradeName},
+            </if>
+            <if test="goodsLimit!=0">
+               goods_limit=#{goodsLimit},
+            </if>
+            <if test="spaceLimit!=0">
+               space_limit=#{spaceLimit},
+            </if>
+            <if test="charge!=null and charge!=''">
+               charge=#{charge},
+            </if>
+            <if test="needConfirm!=null and needConfirm!=''">
+               need_confirm=#{needConfirm},
+            </if>
+            <if test="description!=null and description!=''">
+               description=#{description},
+            </if>
+            <if test="skins!=null and skins!=''">
+               skins=#{skins},
+            </if>
+            <if test="wapSkins!=null and wapSkins!=''">
+               wap_skins=#{wapSkins},
+            </if>
+            <if test="sortOrder!=0">
+               sort_order=#{sortOrder},
+            </if>
+        </trim>
+    </update>
+
+    <sql id="whereIf">
+        <where>
+            <if test="gradeId!=0">
+                or  grade_id=#{gradeId}
+            </if>
+            <if test="gradeName!=null and gradeName!=''">
+                or  grade_name=#{gradeName}
+            </if>
+            <if test="goodsLimit!=0">
+                or  goods_limit=#{goodsLimit}
+            </if>
+            <if test="spaceLimit!=0">
+                or  space_limit=#{spaceLimit}
+            </if>
+            <if test="charge!=null and charge!=''">
+                or  charge=#{charge}
+            </if>
+            <if test="needConfirm!=null and needConfirm!=''">
+                or  need_confirm=#{needConfirm}
+            </if>
+            <if test="description!=null and description!=''">
+                or  description=#{description}
+            </if>
+            <if test="skins!=null and skins!=''">
+                or  skins=#{skins}
+            </if>
+            <if test="wapSkins!=null and wapSkins!=''">
+                or  wap_skins=#{wapSkins}
+            </if>
+            <if test="sortOrder!=0">
+                or  sort_order=#{sortOrder}
+            </if>
+        </where>
+    </sql>
+
+    <select id="select" parameterType="com.shop.user.entity.Grade" resultMap="gradeResultMap">
+        select * from  t_grade
+        <include refid="whereIf"/>
+    </select>
+
+    <select id="count" parameterType="com.shop.user.entity.Grade" resultType="java.lang.Long">
+        select count(*) from  t_grade
+        <include refid="whereIf"/>
+    </select>
+
+</mapper>

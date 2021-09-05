@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.user.front.mapper.TeambuyLogMapper">
+    <resultMap id="teambuyLogResultMap" type="com.shop.user.dto.TeambuyLogDto">
+        <result property="logid" column="logid" javaType="long"></result>
+        <result property="tbid" column="tbid" javaType="java.lang.Long"></result>
+        <result property="userid" column="userid" javaType="java.lang.Long"></result>
+        <result property="orderId" column="order_id" javaType="java.lang.Long"></result>
+        <result property="goodsId" column="goods_id" javaType="java.lang.Long"></result>
+        <result property="teamid" column="teamid" javaType="java.lang.Long"></result>
+        <result property="leader" column="leader" javaType="java.lang.String"></result>
+        <result property="people" column="people" javaType="java.lang.String"></result>
+        <result property="status" column="status" javaType="int"></result>
+        <result property="created" column="created" javaType="long"></result>
+        <result property="expired" column="expired" javaType="long"></result>
+        <result property="payTime" column="pay_time" javaType="long"></result>
+    </resultMap>
+
+
+    <insert id="add" parameterType="com.shop.user.dto.TeambuyLogDto" >
+        insert into t_teambuy_log
+        <trim suffixOverrides=",">
+        (
+           <if test="logid!=null">
+               logid,
+           </if>
+           <if test="tbid!=null">
+               tbid,
+           </if>
+           <if test="userid!=null">
+               userid,
+           </if>
+           <if test="orderId!=null">
+               order_id,
+           </if>
+           <if test="goodsId!=null">
+               goods_id,
+           </if>
+           <if test="teamid!=null">
+               teamid,
+           </if>
+           <if test="leader!=null and leader!=''">
+               leader,
+           </if>
+           <if test="people!=null and people!=''">
+               people,
+           </if>
+           <if test="status!=0">
+               status,
+           </if>
+           <if test="created!=0">
+               created,
+           </if>
+           <if test="expired!=0">
+               expired,
+           </if>
+           <if test="payTime!=0">
+               pay_time,
+           </if>
+        </trim>
+        )
+        values
+        (
+        <trim suffixOverrides=",">
+           <if test="logid!=null">
+               #{logid},
+           </if>
+           <if test="tbid!=null">
+               #{tbid},
+           </if>
+           <if test="userid!=null">
+               #{userid},
+           </if>
+           <if test="orderId!=null">
+               #{orderId},
+           </if>
+           <if test="goodsId!=null">
+               #{goodsId},
+           </if>
+           <if test="teamid!=null">
+               #{teamid},
+           </if>
+           <if test="leader!=null and leader!=''">
+               #{leader},
+           </if>
+           <if test="people!=null and people!=''">
+               #{people},
+           </if>
+           <if test="status!=0">
+               #{status},
+           </if>
+           <if test="created!=0">
+               #{created},
+           </if>
+           <if test="expired!=0">
+               #{expired},
+           </if>
+           <if test="payTime!=0">
+               #{payTime},
+           </if>
+        </trim>
+        )
+        </insert>
+
+    <update id="modify" parameterType="com.shop.user.dto.TeambuyLogDto" >
+        update  t_teambuy_log  
+        <trim prefix="set" suffixOverrides=",">
+            <if test="logid!=null">
+               logid=#{logid},
+            </if>
+            <if test="tbid!=null">
+               tbid=#{tbid},
+            </if>
+            <if test="userid!=null">
+               userid=#{userid},
+            </if>
+            <if test="orderId!=null">
+               order_id=#{orderId},
+            </if>
+            <if test="goodsId!=null">
+               goods_id=#{goodsId},
+            </if>
+            <if test="teamid!=null">
+               teamid=#{teamid},
+            </if>
+            <if test="leader!=null and leader!=''">
+               leader=#{leader},
+            </if>
+            <if test="people!=null and people!=''">
+               people=#{people},
+            </if>
+            <if test="status!=0">
+               status=#{status},
+            </if>
+            <if test="created!=0">
+               created=#{created},
+            </if>
+            <if test="expired!=0">
+               expired=#{expired},
+            </if>
+            <if test="payTime!=0">
+               pay_time=#{payTime},
+            </if>
+        </trim>
+    </update>
+
+    <sql id="whereIf">
+        <where>
+            <trim  prefixOverrides="or">
+            <if test="logid!=null">
+                or  logid=#{logid}
+            </if>
+            <if test="tbid!=null">
+                or  tbid=#{tbid}
+            </if>
+            <if test="userid!=null">
+                or  userid=#{userid}
+            </if>
+            <if test="orderId!=null">
+                or  order_id=#{orderId}
+            </if>
+            <if test="goodsId!=null">
+                or  goods_id=#{goodsId}
+            </if>
+            <if test="teamid!=null">
+                or  teamid=#{teamid}
+            </if>
+            <if test="leader!=null and leader!=''">
+                or  leader=#{leader}
+            </if>
+            <if test="people!=null and people!=''">
+                or  people=#{people}
+            </if>
+            <if test="status!=0">
+                or  status=#{status}
+            </if>
+            <if test="created!=0">
+                or  created=#{created}
+            </if>
+            <if test="expired!=0">
+                or  expired=#{expired}
+            </if>
+            <if test="payTime!=0">
+                or  pay_time=#{payTime}
+            </if>
+            </trim>
+        </where>
+    </sql>
+
+    <select id="select" parameterType="com.shop.user.dto.TeambuyLogDto" resultMap="teambuyLogResultMap">
+        select * from  t_teambuy_log
+        <include refid="whereIf"/>
+    </select>
+
+    <select id="count" parameterType="com.shop.user.dto.TeambuyLogDto" resultType="java.lang.Long">
+        select count(*) from  t_teambuy_log
+        <include refid="whereIf"/>
+    </select>
+
+</mapper>

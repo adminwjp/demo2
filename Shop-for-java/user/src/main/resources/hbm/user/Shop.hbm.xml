@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.shop.user.entity">
+    <class name="com.shop.user.entity.Shop" table="t_shop" >
+        <id name="shopId" column="shop_id" unsaved-value="0" > <generator class="identity" /></id>
+        <property name="shopName" column="shop_name" type="java.lang.String" ></property>
+        <property name="ownerName" column="owner_name" type="java.lang.String" ></property>
+        <property name="identityCard" column="identity_card" type="java.lang.Long" ></property>
+        <property name="regionId" column="region_id" type="java.lang.Long" ></property>
+        <property name="regionName" column="region_name" type="java.lang.String" ></property>
+        <property name="address" column="address" type="java.lang.String" ></property>
+        <property name="zipcode" column="zipcode" type="java.lang.String" ></property>
+        <property name="tel" column="tel" type="java.lang.String" ></property>
+        <property name="sgrade" column="sgrade" type="java.lang.String" ></property>
+        <property name="applyRemark" column="apply_remark" type="java.lang.String" ></property>
+        <property name="creditValue" column="credit_value" type="java.lang.String" ></property>
+        <property name="praiseRate" column="praise_rate" type="java.math.BigDecimal" ></property>
+        <property name="domain" column="domain" type="java.lang.String" ></property>
+        <property name="state" column="state" type="java.lang.Integer" ></property>
+        <property name="closeReason" column="close_reason" type="java.lang.String" ></property>
+        <property name="addTime" column="add_time" type="java.lang.Long" ></property>
+        <property name="endTime" column="end_time" type="java.lang.Long" ></property>
+        <property name="certification" column="certification" type="java.lang.String" ></property>
+        <property name="sortOrder" column="sort_order" type="java.lang.Integer" ></property>
+        <property name="recommended" column="recommended" type="java.lang.String" ></property>
+        <property name="theme" column="theme" type="java.lang.String" ></property>
+        <property name="wapTheme" column="wap_theme" type="java.lang.String" ></property>
+        <property name="storeBanner" column="store_banner" type="java.lang.String" ></property>
+        <property name="wapStoreBanner" column="wap_store_banner" type="java.lang.String" ></property>
+        <property name="storeLogo" column="store_logo" type="java.lang.String" ></property>
+        <property name="description" column="description" type="java.lang.String" ></property>
+        <property name="identityFront" column="identity_front" type="java.lang.String" ></property>
+        <property name="identityBack" column="identity_back" type="java.lang.String" ></property>
+        <property name="businessLicense" column="business_license" type="java.lang.String" ></property>
+        <property name="imQq" column="im_qq" type="java.lang.String" ></property>
+        <property name="imWw" column="im_ww" type="java.lang.String" ></property>
+        <property name="navColor" column="nav_color" type="java.lang.String" ></property>
+        <property name="navShowStyle" column="nav_show_style" type="java.lang.String" ></property>
+        <property name="hotSearch" column="hot_search" type="java.lang.String" ></property>
+        <property name="businessScope" column="business_scope" type="java.lang.String" ></property>
+        <property name="onlineService" column="online_service" type="java.lang.String" ></property>
+        <property name="hotline" column="hotline" type="java.lang.String" ></property>
+        <property name="storeSlides" column="store_slides" type="java.lang.String" ></property>
+        <property name="wapStoreSlides" column="wap_store_slides" type="java.lang.String" ></property>
+        <property name="longitude" column="longitude" type="java.lang.String" ></property>
+        <property name="latitude" column="latitude" type="java.lang.String" ></property>
+        <property name="zoom" column="zoom" type="java.lang.String" ></property>
+    </class>
+</hibernate-mapping>

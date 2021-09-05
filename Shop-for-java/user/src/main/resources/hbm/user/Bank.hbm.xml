@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.shop.user.entity">
+    <class name="Bank" table="t_bank" >
+        <id name="bid" column="bid" unsaved-value="0" >
+            <generator class="identity" />
+        </id>
+        <property name="userid" column="userid" type="java.lang.Long" ></property>
+        <property name="bankName" column="bank_name" type="java.lang.String" ></property>
+        <property name="shortName" column="short_name" type="java.lang.String" ></property>
+        <property name="accountName" column="account_name" type="java.lang.String" ></property>
+        <property name="openBank" column="open_bank" type="java.lang.String" ></property>
+        <property name="type" column="type" type="java.lang.String" ></property>
+        <property name="num" column="num" type="java.lang.Integer" ></property>
+    </class>
+</hibernate-mapping>
